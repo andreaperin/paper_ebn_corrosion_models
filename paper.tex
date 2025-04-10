@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{float}
+
+\usepackage{svg}
+\usepackage[english]{babel}
+% \usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage{lineno,hyperref}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage[
+    backend=biber,
+    style=numeric-comp,
+    sorting=none,
+    maxnames=8,
+    minnames=3,
+    maxcitenames=2,
+    mincitenames=1,
+    abbreviate=false,
+    giveninits=true,
+    date=year
+]{biblatex}
+\addbibresource{mybibfile.bib}
+\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1}
+
+
+\title{Enhanced Bayesian Network with Imprecise Probabilities for Risk Assessment of Concrete Corrosion due to Climate Change}
+
+\author{A. Perin, S. A. Hosseini, E. Zio, M. Broggi, M. Beer}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+    \input{sections/abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+    \input{sections/introduction.tex}
+
+\section{eBN-based Framework for Risk Assessment}
+    \input{sections/ebn.tex}
+    
+\section{Case of Study}
+    \input{sections/casestudy.tex}
+
+\section{Results \& Discussions}
+    \subsection{Sensitivity Analysis of Concrete Corrosion Models}
+    \subsection{Exceedance Probabilities for Corrosion}
+
+\section{Conclusions}
+
+\newpage
+
+\printbibliography{}
+
+\end{document}
