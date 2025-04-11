@@ -85,7 +85,7 @@ The eBN representing the carbonation process, illustrated in Fig.~\ref{carbonati
 A third discrete root node, \textit{DeH}, is also shown in Fig.~\ref{carbonation_ebn}. This node represents a system designed to control and reduce the RH below a threshold. Specifically, whenever RH exceeds 0.25, the node enforces a reduction to 0.2. These values were selected based on the influence of RH on the carbonation model, as illustrated in Fig.~\ref{carbonation_depth vs RH}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/4_case_study/1_RH_vs_CO2corr.png}
+    \includegraphics[width=\linewidth]{imgs/pdfs/10_RH_carb.pdf}
     \caption{RH effect on carbonation depth}\label{carbonation_depth vs RH}
 \end{figure}
 The \textit{DeH} node is modeled as a Boolean variable with two states: failed ($P_{F} = 10^{-4}$) and working ($P_{W} = 1 - 10^{-4}$). \\
@@ -418,7 +418,7 @@ The chloride-induced corrosion process is represented by the eBN depicted in Fig
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/4_case_study/2_RH_vs_Chcorr.png}
+    \includegraphics[width=\linewidth]{imgs/pdfs/11_RH_corr.pdf}
     \caption{RH effect on chloride depth}\label{Chloride vs RH}
 \end{figure}
 In addition to these, the model introduces a discrete root node, \textit{DeCH}, representing a chloride mitigation system that reduces the boundary chloride concentration, $C_0^{Cl}$, when it exceeds a critical level. The effect of the boundary chloride concentration on the model is shown in Fig.~\ref{Chloride vs RH}. $DeCh$ node is modeled as a Boolean variable with states \textit{working} and \textit{failed}, with assigned probabilities $P_W = 1 - 10^{-4}$ and $P_F = 10^{-4}$, respectively. When operational, the system lowers $C_0^{Cl}$ from values above 0.9 to 0.7. \\
