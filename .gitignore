@@ -5,7 +5,7 @@ lexer/pygments_julia.egg-info
 .DS_Store
 paper.pdf
 Manifest.toml
-
+.vscode/*
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
