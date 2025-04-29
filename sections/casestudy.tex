@@ -23,8 +23,8 @@ Specifically, Eq.\ref{3:carbonation_depth} describes the increment in carbonatio
     \Delta x_c(t, \Delta \tau) = \sqrt{\frac{2 \ k_{site} \ C_{CO_2}(t) \ f_T^C(t) \ f_{RH}^C(t) \ (D_0^C)^{-n_d}}{a} \ \Delta \tau} \ \cdot \ \left( \frac{1}{\tau} \right)^{n_m} 
 \end{equation}
 In defining $\Delta x_c$, $\tau$ is an integer representing the number of $\Delta \tau$ intervals needed from the reference year to reach the evaluation year $t$, e.g., $t = 2020$ implies $\tau = 1$, $t = 2030$ implies $\tau = 2$, and so on.
-The variable $k_{site}$ accounts for potentially higher $CO_2$ concentration values in industrial and urban areas; $C_{CO_2}$ is the time-dependent $CO_2$ concentration measured in $kg / m^3$; $D_0^C$ is the $CO_2$ diffusion coefficient at reference time $\tau_0$, measured in $m^2 / s$; $n_d$ is the diffusion coefficient aging factor; and $n_m$ is a factor accounting for exposure to microclimatic wetting and drying cycles, with a value of $0$ for sheltered outdoor environments, or $0.12$ for unsheltered outdoor. \\
-The time-independent quantity $a$ is derived from Eq.\ref{eq_a}, where $\alpha_h$ is the degree of hydration, expressed as a function of the water-to-cement ratio $w / c$. The cement content $Ce$ is measured in $kg / m^3$, the calcium oxide fraction in cement $CaO$ is approximately 0.65, and the molar masses of $CO_2$ and $CaO$ are 44 $kg/mol$ and 56 $kg/mol$, respectively.
+The variable $k_{site}$ accounts for potentially higher $CO_2$ concentration values in industrial and urban areas; $C_{CO_2}$ is the time-dependent $CO_2$ concentration measured in \si{\kilogram\per\cubic\meter} is the $CO_2$ diffusion coefficient at reference time $\tau_0$, measured in \si{\square\meter\per\second}; $n_d$ is the diffusion coefficient aging factor; and $n_m$ is a factor accounting for exposure to microclimatic wetting and drying cycles, with a value of $0$ for sheltered outdoor environments, or $0.12$ for unsheltered outdoor. \\
+The time-independent quantity $a$ is derived from Eq.\ref{eq_a}, where $\alpha_h$ is the degree of hydration, expressed as a function of the water-to-cement ratio $w / c$. The cement content $Ce$ is measured in \si{\kilogram\per\cubic\meter}, the calcium oxide fraction in cement $CaO$ is approximately 0.65, and the molar masses of $CO_2$ and $CaO$ are \SI{44}{\kilogram\per\mole} and \SI{56}{\kilogram\per\mole}, respectively.
 \begin{equation}
     \left\{
     \begin{array}{ll}
@@ -36,7 +36,8 @@ The time-independent quantity $a$ is derived from Eq.\ref{eq_a}, where $\alpha_h
     \label{eq_a}
 \end{equation}
 The time-dependent quantities $f_T^C$ and $f_{RH}^C$ allow the incorporation of climate variable effects, associated with climate change projections, into the carbonation depth evaluation, as presented in the analytical models by~\textcite{Carbonation_BASTIDASARTEAGA}. 
-Specifically, $f_T^C$ represents the dynamic effect of temperature on carbonation, impacting the diffusion coefficient according to the Arrhenius Law~\cite{Carbonation_YOON}, as shown in Eq.\ref{3:ft}. Here, $E$ is the activation energy of the diffusion process, i.e., 38.3 kJ/mol; $R$ is the gas constant, i.e., 8.314 $kJ/(mol \ K)$; $T(t_0)$ is the reference temperature, i.e., 293 $K$; and $T(t)$ is the temperature in Kelvin at time $t$.
+Specifically, $f_T^C$ represents the dynamic effect of temperature on carbonation, impacting the diffusion coefficient according to the Arrhenius Law~\cite{Carbonation_YOON}, as shown in Eq.\ref{3:ft}. Here, $E$ is the activation energy of the diffusion process, i.e.,
+\SI{38.3}{\kilo\joule\per\mole}; $R$ is the gas constant, i.e., \SI{8.314}{\kilo\joule\per\mole\per\kelvin}; $T(t_0)$ is the reference temperature, i.e.,\SI{293}{\kelvin}; and $T(t)$ is the temperature in Kelvin at time $t$.
 \begin{equation}
     \label{3:ft}
         f_T^C (t) = e^{\frac{E}{R} \left[ \frac{1}{T_0} - \frac{1}{T(t)} \right]}
@@ -61,7 +62,7 @@ In this study, a time-dependent model is applied, incorporating the chloride dif
     \label{eq:chloride_corrosion}
     C(z, t) = C_0^{Cl} \left[ 1-erf \left(\frac{z}{2\sqrt{k_e \ k_t \ k_c \ f_T^{Cl}(t) \ f_{RH}^{Cl}(t) \ D_0^{Cl} \ \omega \tau}} \right) \right]
 \end{equation}
-Here, $C_0^{Cl}$ represents the chloride concentration at the boundary; for atmospheric areas remote from coasts, $C_0^{Cl}$ is typically around $1.15 \ \text{kg/m}^3$, whereas, in coastal or tidal areas, the chloride concentration at the surface is significantly higher. $D_0^{Cl}$ is the reference chloride diffusion coefficient; $k_e$ is the environmental coefficient; $k_t$ is the test method factor, and $k_c$ is the curing factor. 
+Here, $C_0^{Cl}$ represents the chloride concentration at the boundary; for atmospheric areas remote from coasts, $C_0^{Cl}$ is typically around \SI{1.15}{\kilogram\per\cubic\meter}, whereas, in coastal or tidal areas, the chloride concentration at the surface is significantly higher. $D_0^{Cl}$ is the reference chloride diffusion coefficient; $k_e$ is the environmental coefficient; $k_t$ is the test method factor, and $k_c$ is the curing factor. 
 Similar to carbonation, there are two time-dependent quantities that account for the effects of climate change projections on temperature and relative humidity: $f_{T}^{Cl}$ and $f_{RH}^{Cl}$.
 \begin{equation}
     \label{eq_f_rh_cl}
@@ -70,7 +71,7 @@ Similar to carbonation, there are two time-dependent quantities that account for
 The temperature effect is consistent with that defined for carbonation in Eq.\ref{3:ft}, thus $f_T^C = f_T^{Cl}$. The effect of RH is expressed in the work of~\textcite{f_RH_ClELHASSAN} as shown in Eq.\ref{eq_f_rh_cl}.
 
 \subsection{eBN for concrete degradation}
-The eBN framework is the selected approach to perform risk analysis for concrete degradation considering climate change. Climate change data includes three main projection scenarios, namely \textit{ssp1}, \textit{ssp2}, and \textit{ssp5}, which account for variations in temperature, $CO_2$ concentration, and relative humidity from 2020 to 2100. \textbf{{{Add citation here}}}  
+The eBN framework is the selected approach to perform risk analysis for concrete degradation considering climate change. Climate change data are taken from the catalogue produced by~\textcite{Copernicus_Climate_Change} and includes three main projection scenarios refered to three different shared socioeconomic pathway (SSP), namely \textit{ssp1}, \textit{ssp2}, and \textit{ssp5}. These pathways provide different pathways of the future climate forcing and account for variations in temperature, $CO_2$ concentration, and relative humidity from 2020 to 2100. 
 In this study the eBN integrates the two degradation models presented in~\ref{Carbonation_corrosion_Chpt}, and in~\ref{Chloride_corrosion_Chpt} and is structured to capture the probabilistic dependencies considering epistemic and aleatoric uncertainties, between climate conditions of temperature, relative humidity, and CO₂ concentration, material properties, such as diffusion coefficients, water-to-cement ratio, and the final state of the system, through the carbonation and chloride effect on concrete.
 
 The following sections details the eBN structure, the probabilistic modeling of input variables, and its application to the case study of a radioactive waste disposal concrete degradation. Initially, the carbonation-induced and chloride-induced corrosion models are examined separately to enhance clarity and comprehensibility. Subsequently, the complete eBN framework, integrating both degradation mechanisms, is presented.
@@ -444,5 +445,140 @@ As with the \textit{ratio\_w/c} node and RH percentage change nodes in~\ref{ebn_
 - \textit{kc\_int} samples are scaled by 0.7 and shifted by +2.4;
 - \textit{D\_Ch0\_int} samples are scaled by 0.2, shifted by +1, and multiplied by $6 \times 10^{-12}$.
 
-All these nodes feed into the \textit{ch\_corr\_depth} node, which uses the model in Eq.~\ref{eq:chloride_corrosion} to evaluate the chloride concentration $C(z;t)$ across the concrete depth. Unlike the carbonation model, this model is not time-recursive but spatially dependent in the z-direction. The chloride penetration depth is defined as the depth at which $C(z;t)$ first reaches 0.9~kg/m\textsuperscript{3}. This depth is compared against a failure threshold of 0.12~cm to assess structural safety.
-Further implementation details of the \texttt{ch\_corr\_depth} node can be found in the associated code repository.
+All these nodes feed into the \textit{ch\_corr\_depth} node, which uses the model in Eq.~\ref{eq:chloride_corrosion} to evaluate the chloride concentration $C(z;t)$ across the concrete depth. Unlike the carbonation model, this model is not time-recursive but spatially dependent in the z-direction. The chloride penetration depth is defined as the depth at which $C(z;t)$ first reaches \SI{0.9}{\kilogram\per\cubic\meter}. This depth is compared against a failure threshold of \SI{0.12}{\centi\meter} to assess structural safety.
+Further implementation details of the \textit{ch\_corr\_depth} node can be found in the associated code repository.
+
+\subsubsection{eBN -- Carbonation \& Chloride corrosion models}
+The final eBN that unify the 2 corrosions models is the depicted in Fig.~\ref{fig:precise_ebn}. Nodes associated to temperature, $CO_2$ concentration and RH are shared, as well as the \textit{proj}, \textit{DeH} and \textit{t} nodes. 
+
+\begin{figure}[]
+    \centering
+    \includegraphics[width=\linewidth]{imgs/pdfs/12_total_ebn_precise.pdf}
+    \caption{Carbonation and chloride induced corrosion phenomena eBN with precise nodes}\label{fig:precise_ebn}
+\end{figure}
+
+The functional nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} are initially defined through the set of continuous random varibales coming from their continuous parents, the set of discrete random variables coming from their discrete parents, and a simulation techinque, selcted to be a standard Monte Carlo with $10^4$ samples for both of them. The union of these two sets of inputs together with the choosen simulation technique and two performance functions, one for the chloride induced corrosion and one for the carbonation model, allows to solve the structural reliability problems. In this way is possible to obtain the two CPTs associated with the two discrete nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} in the reduced BN of Fig.~\ref{fig:precise_rbn}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imgs/pdfs/13_total_rbn_precise.pdf}
+    \caption{Carbonation and chloride induced corrosion phenomena reduce BN with precise nodes}\label{fig:precise_rbn}
+\end{figure}
+
+In this BN only discrete nodes are present. Both the evaluated nodes  \textit{ch\_corr\_depth} and \textit{carb\_depth} have as parents the discrete nodes refered to the specific time slice, to the specific climatic projection, and the auxiliary discrete node \textit{deH}. The node \textit{deCh} influences the sole node chloride induced corrosion process, therefore it is not a parent of \textit{carb\_depth}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imgs/pdfs/14_total_ebn_imprecise.pdf}
+    \caption{Carbonation and chloride induced corrosion phenomena eBN with imprecise temperature nodes}\label{fig:imprecise_ebn}
+\end{figure}
+
+In the climatic change catalogue~\cite{Copernicus_Climate_Change} data for each SSP come from different simulations. The guassian distributions defined in the tables Tab.~\ref{Climate_Change_Tnode_dists},~\ref{Climate_Change_RHnode_dists}, and~\ref{Climate_Change_CO2node_dists} have been hypotized by the author and their parameter have been extracted under this hypothesis to fit the dataset.
+A more robust way for dealing with the epistemic uncertainty problem of future projections is represented by the the interval probability theory. Therefore without introducing any specific hypothesis over the specific distribution the quantities of interest have treated as an interval defined only by an upper bound and a lower bound given rispectively by the maximum and minimum value of all the simulations related to a specific SSP.\\
+This concept have been applied to temperature projection obtaining the new node presented in Fig.~\ref{fig:imprecise_ebn} and defined in Tab.~\ref{Climate_Change_Tnode_interval}. The reduced BN of this imprecise eBN is the Credal Network presented in Fig.~\ref{fig:imprecise_rbn}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imgs/pdfs/15_total_rbn_imprecise.pdf}
+    \caption{Carbonation and chloride induced corrosion phenomena reduce BN with imprecise nodes}\label{fig:imprecise_rbn}
+\end{figure}
+
+\begin{table}[H]
+    \begin{center}
+    \caption{Temperature nodes CPTs for the imprecise eBN of Fig.\ref{fig:imprecise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_interval}
+        \begin{tabular}{P{2.5cm}P{7.7cm}}
+            \toprule
+            \textbf{Node} & \textbf{CPT} \\
+            \midrule
+            $T \_ 2020$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.8723$ & $285.5608$\\ 
+                    \:ssp2 & $281.6916$ & $286.8414$ \\
+                    \:ssp5 & $281.5062$ & $286.7255$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2030$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.0982$ & $287.0741$ \\
+                    \:ssp2 & $282.2602$ & $286.8415$ \\
+                    \:ssp5 & $281.5062$ & $286.7255$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2040$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.2752$ & $285.7549$ \\
+                    \:ssp2 & $282.2368$ & $287.6774$ \\
+                    \:ssp5 & $281.8712$ & $287.1479$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2050$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.1972$ & $286.3009$ \\
+                    \:ssp2 & $282.1169$ & $286.5602$ \\
+                    \:ssp5 & $282.6306$ & $287.7634$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2060$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.9507$ & $287.6729$ \\
+                    \:ssp2 & $282.8809$ & $287.8323$ \\
+                    \:ssp5 & $284.1444$ & $288.1458$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2070$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.4679$ & $286.3140$ \\
+                    \:ssp2 & $282.1799$ & $287.8909$ \\
+                    \:ssp5 & $283.5394$ & $289.1019$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2080$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.0230$ & $287.2399$ \\
+                    \:ssp2 & $283.1048$ & $287.3655$ \\
+                    \:ssp5 & $284.8888$ & $289.7104$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2090$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.3064$ & $288.7765$ \\
+                    \:ssp2 & $282.5490$ & $287.8518$ \\
+                    \:ssp5 & $284.3658$ & $290.5262$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2100$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.7551$ & $287.4349$ \\
+                    \:ssp2 & $283.0796$ & $288.4324$ \\
+                    \:ssp5 & $285.1481$ & $292.2743$ \\
+                \end{tabular}
+        \end{tabular}
+    \end{center}
+\end{table}
+
