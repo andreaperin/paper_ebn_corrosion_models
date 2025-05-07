@@ -92,7 +92,7 @@ y_vals = df.corrosion_depth
 plt = @pgf Axis(
     {
         xlabel = L"RH",
-        ylabel = L"corrosion \ depth \ [cm]",
+        ylabel = L"corrosion \ depth \ [m]",
         title = L"RH \ vs \ corrosion \_ depth ",
         width = "10cm",
         height = "8cm",
