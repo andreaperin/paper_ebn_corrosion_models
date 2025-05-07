@@ -418,3 +418,7 @@ plt2 = gplot(rbn, NODESIZEFACTOR=0.25, NODELABELSIZE=3.6, ARROWLENGTH=0.1, leftp
 draw(PDF("/Users/andreaperin_macos/Documents/PhD/3_Academic/Papers_Presentations/Papers/2_LASAR/Andrea/imgs/pdfs/15_total_rbn_imprecise.pdf", 16cm, 16cm), plt2)
 
 
+using JLD2
+@load "/Users/andreaperin_macos/Documents/Code/Ali_ebn/final_version/ebns/6_imprecise/evaluated/ebn_RS_1000_2025-04-30_150503.jld2" ebn
+
+ebn.nodes[end]
