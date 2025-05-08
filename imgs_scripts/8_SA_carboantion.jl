@@ -190,7 +190,7 @@ for (i, year) in enumerate(slices)
             Plot({fill = "red", bar_shift = "$(bar_shift_amt)cm"}, Coordinates([(i, group2_values[i]) for i in 1:n])),
             Legend(["First Order", "Total Effect"])
         )
-        PGFPlotsX.save("imgs/pdfs/sobols_indices/17_sobols_$(year)_$(proj).pdf", pgf)
+        PGFPlotsX.save("imgs/pdfs/sobols_indices/carbonation/17_sobols_$(year)_$(proj).pdf", pgf)
     end
 end
 
@@ -272,5 +272,5 @@ for year in slices
         Plot({fill = "red", bar_shift = "$(bar_shift_amt)cm"}, Coordinates([(i, group2_values[i]) for i in 1:n])),
         Legend(["First Order", "Total Effect"])
     )
-    PGFPlotsX.save("imgs/pdfs/sobols_indices/16_sobols_uniform_$(year).pdf", pgf)
+    PGFPlotsX.save("imgs/pdfs/sobols_indices/carbonation/16_sobols_uniform_$(year).pdf", pgf)
 end
