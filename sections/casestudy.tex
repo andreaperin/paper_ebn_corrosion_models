@@ -89,7 +89,7 @@ A third discrete root node, \textit{DeH}, is also shown in Fig.~\ref{carbonation
     \includegraphics[width=\linewidth]{imgs/pdfs/10_RH_carb.pdf}
     \caption{RH effect on carbonation depth}\label{carbonation_depth vs RH}
 \end{figure}
-The \textit{DeH} node is modeled as a Boolean variable with two states: failed ($P_{F} = 10^{-4}$) and working ($P_{W} = 1 - 10^{-4}$). \\
+The \textit{DeH} node is modelled as a Boolean variable with two states: failed ($P_{F} = 10^{-4}$) and working ($P_{W} = 1 - 10^{-4}$). \\
 In addition, eight continuous root nodes are introduced to account for aleatoric uncertainties in the parameters $n_d$, $n_m$, $E$, $k_{site}$, water-to-cement ratio ($w/c$), $C_e$, $CaO$, and $D_0^C$. Their CPTs are provided in Table~\ref{continuous_root_node_ebn_carb}.
 \begin{table}[hbt!]
     \begin{center}
@@ -411,7 +411,7 @@ Further implementation details for the \textit{carb\_depth} node are available i
 \end{table}
 
 \subsubsection{eBN -- Chloride-induced corrosion model}\label{ebn_chloride_section}
-The chloride-induced corrosion process is represented by the eBN depicted in Fig.~\ref{chloride_ebn}. This model includes some of the same continuous nodes as the corrosion process eBN, specifically for temperature, $CO_2$ concentration, RH percentage change, and the activation energy $E$. It also shares the  discrete nodes \textit{proj}, \textit{t} and (\textit{DeH}).
+The chloride-induced corrosion process is represented by the eBN depicted in Fig.~\ref{chloride_ebn}. This model includes some of the same continuous nodes as the corrosion process eBN, specifically for temperature, $CO_2$ concentration, RH percentage change, and the activation energy $E$. It also shares the  discrete nodes \textit{proj}, \textit{t} and \textit{DeH}. The effect of relative humidity on the chloride penetration is shown in Fig.~\ref{RH vs chloride depth}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{imgs/pdfs/9_chloride_ebn.pdf}
@@ -420,9 +420,15 @@ The chloride-induced corrosion process is represented by the eBN depicted in Fig
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{imgs/pdfs/11_RH_corr.pdf}
-    \caption{RH effect on chloride depth}\label{Chloride vs RH}
+    \caption{RH effect on chloride depth}\label{RH vs chloride depth}
 \end{figure}
-In addition to these, the model introduces a discrete root node, \textit{DeCH}, representing a chloride mitigation system that reduces the boundary chloride concentration, $C_0^{Cl}$, when it exceeds a critical level. The effect of the boundary chloride concentration on the model is shown in Fig.~\ref{Chloride vs RH}. $DeCh$ node is modeled as a Boolean variable with states \textit{working} and \textit{failed}, with assigned probabilities $P_W = 1 - 10^{-4}$ and $P_F = 10^{-4}$, respectively. When operational, the system lowers $C_0^{Cl}$ from values above 0.9 to 0.7. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{imgs/pdfs/11_Chloride_corr.pdf}
+    \caption{Chloride concentration at system boundary effect on chloride depth}\label{Chloride vs corrosion depth}
+\end{figure}
+
+In addition to these, the model introduces a discrete root node, \textit{DeCh}, representing a chloride mitigation system that reduces the boundary chloride concentration, $C_0^{Cl}$, when it exceeds a critical level. The effect of the boundary chloride concentration on the model is shown in Fig.~\ref{Chloride vs corrosion depth}. $DeCh$ node is modelled as a Boolean variable with states \textit{working} and \textit{failed}, with assigned probabilities $P_W = 1 - 10^{-4}$ and $P_F = 10^{-4}$, respectively. When operational, the system lowers $C_0^{Cl}$ from values above 0.9 to 0.7. \\
 Five continuous root nodes are also included to represent aleatoric uncertainties in the parameters $k_t$, $k_c$, $k_e$, $C_0^{Cl}$, and the reference diffusion coefficient $D_0^{Cl}$. Their CPTs are detailed in Table~\ref{continuous_root_node_ebn_ch}.
 
 \begin{table}[hbt!]
@@ -445,7 +451,7 @@ As with the \textit{ratio\_w/c} node and RH percentage change nodes in~\ref{ebn_
 - \textit{kc\_int} samples are scaled by 0.7 and shifted by +2.4;
 - \textit{D\_Ch0\_int} samples are scaled by 0.2, shifted by +1, and multiplied by $6 \times 10^{-12}$.
 
-All these nodes feed into the \textit{ch\_corr\_depth} node, which uses the model in Eq.~\ref{eq:chloride_corrosion} to evaluate the chloride concentration $C(z;t)$ across the concrete depth. Unlike the carbonation model, this model is not time-recursive but spatially dependent in the z-direction. The chloride penetration depth is defined as the depth at which $C(z;t)$ first reaches \SI{0.9}{\kilogram\per\cubic\meter}. This depth is compared against a failure threshold of \SI{0.12}{\centi\meter} to assess structural safety.
+All these nodes feed into the \textit{ch\_corr\_depth} node, which uses the model in Eq.~\ref{eq:chloride_corrosion} to evaluate the chloride concentration $C(z;t)$ across the concrete depth. Unlike the carbonation model, this model is not time-recursive but spatially dependent in the z-direction. The chloride penetration depth is defined as the depth at which $C(z;t)$ first reaches \SI{0.9}{\kilogram\per\cubic\meter}. This depth is compared against a failure threshold of \SI{12}{\centi\meter} to assess structural safety.
 Further implementation details of the \textit{ch\_corr\_depth} node can be found in the associated code repository.
 
 \subsubsection{eBN -- Carbonation \& Chloride corrosion models}
@@ -457,7 +463,7 @@ The final eBN that unify the 2 corrosions models is the depicted in Fig.~\ref{fi
     \caption{Carbonation and chloride induced corrosion phenomena eBN with precise nodes}\label{fig:precise_ebn}
 \end{figure}
 
-The functional nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} are initially defined through the set of continuous random varibales coming from their continuous parents, the set of discrete random variables coming from their discrete parents, and a simulation techinque, selcted to be a standard Monte Carlo with $10^4$ samples for both of them. The union of these two sets of inputs together with the choosen simulation technique and two performance functions, one for the chloride induced corrosion and one for the carbonation model, allows to solve the structural reliability problems. In this way is possible to obtain the two CPTs associated with the two discrete nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} in the reduced BN of Fig.~\ref{fig:precise_rbn}. 
+The functional nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} are initially defined through the set of continuous random variables coming from their continuous parents, the set of discrete random variables coming from their discrete parents, and a simulation techinque, selected to be a standard Monte Carlo with $10^4$ samples for both of them. The union of these two sets of inputs together with the chosen simulation technique and two performance functions, one for the chloride induced corrosion and one for the carbonation model, allows to solve the structural reliability problems. In this way is possible to obtain the two CPTs associated with the two discrete nodes \textit{ch\_corr\_depth} and \textit{carb\_depth} in the reduced BN of Fig.~\ref{fig:precise_rbn}. 
 
 \begin{figure}[H]
     \centering
@@ -474,8 +480,8 @@ In this BN only discrete nodes are present. Both the evaluated nodes  \textit{ch
 \end{figure}
 
 In the climatic change catalogue~\cite{Copernicus_Climate_Change} data for each SSP come from different simulations. The guassian distributions defined in the tables Tab.~\ref{Climate_Change_Tnode_dists},~\ref{Climate_Change_RHnode_dists}, and~\ref{Climate_Change_CO2node_dists} have been hypotized by the author and their parameter have been extracted under this hypothesis to fit the dataset.
-A more robust way for dealing with the epistemic uncertainty problem of future projections is represented by the the interval probability theory. Therefore without introducing any specific hypothesis over the specific distribution the quantities of interest have treated as an interval defined only by an upper bound and a lower bound given rispectively by the maximum and minimum value of all the simulations related to a specific SSP.\\
-This concept have been applied to temperature projection obtaining the new node presented in Fig.~\ref{fig:imprecise_ebn} and defined in Tab.~\ref{Climate_Change_Tnode_interval}. The reduced BN of this imprecise eBN is the Credal Network presented in Fig.~\ref{fig:imprecise_rbn}.
+A more robust way for dealing with the epistemic uncertainty problem of future projections is represented by the interval probability theory. Therefore without introducing any specific hypothesis over the specific distribution the quantities of interest have treated as an interval defined only by an upper bound and a lower bound given respectively by the maximum and minimum value of all the simulations related to a specific SSP.\\
+This concept has been applied to temperature projection obtaining the new node presented in Fig.~\ref{fig:imprecise_ebn} and defined in Tab.~\ref{Climate_Change_Tnode_interval}. The reduced BN of this imprecise eBN is the Credal Network presented in Fig.~\ref{fig:imprecise_rbn}.
 
 \begin{figure}[H]
     \centering
