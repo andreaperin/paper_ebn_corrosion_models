@@ -194,7 +194,7 @@ plt = @pgf Axis(
         xtick = 2020:10:2100,
         xticklabels = [L"2020", L"2030", L"2040", L"2050", L"2060", L"2070", L"2080", L"2090", L"2100"],
         xticklabel_style = "{rotate=45, anchor=east}",  # Better for long labels
-        legend_pos = "south east"
+        legend_pos = "north west"
     },
     lines...,
     dots...,
