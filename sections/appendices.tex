@@ -8,401 +8,847 @@
 
 To simulate long-term climate behaviour, a range of Global Climate Models (GCMs) is utilized to represent large-scale environmental dynamics. For regional-scale applications, these coarse-resolution outputs are refined through down-scaling techniques using Regional Climate Models (RCMs). Climate projections for Belgium, based on \textit{ssp} scenarios, are derived from the Coupled Model Intercomparison Project Phase 6 (CMIP6), which aggregates output from multiple GCMs and RCMs~\cite{CMIP6,Copernicus_Climate_Change}.\\
 The conditional probability tables (CPTs) for temperature, relative humidity, and $CO_2$ concentration nodes in the eBN shown in Fig.~\ref{fig:precise_ebn} are detailed in Tab.~\ref{Climate_Change_Tnode_dists},~\ref{Climate_Change_RHnode_dists}, and~\ref{Climate_Change_CO2node_dists}, respectively. These distributions are estimated by fitting normal distributions at each time step and for each projection.
-\begin{table}[H]
-    \begin{center}
-    \caption{Temperature nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_dists}
-        \begin{tabular}{P{2.5cm}P{8cm}}
-            \toprule
-            \textbf{Node} & \textbf{CPT} \\
-            \midrule
-            $T \_ 2020$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(284.1; 0.85); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2030$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(284.3; 1.13); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2040$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(284.6; 0.85); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(284.9; 1.14); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2050$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.5; 0.85); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(284.8; 1.14); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2060$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(285.1; 0.85); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(285.9; 1.14); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2070$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(285.2; 1.14); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(286.5; 1.15); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2080$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(285.0; 1.14); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(287.4; 1.44); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2090$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(284.8; 1.42); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(286.7; 1.14); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(288.1; 1.44); 0, \infty)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2100$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(283.7; 1.42); 0, \infty)$ \\
-                    \:ssp2 & $Trunc(N(286.0; 1.14); 0, \infty)$ \\
-                    \:ssp5 & $Trunc(N(288.9; 1.45); 0, \infty)$ \\
-                \end{tabular}
-        \end{tabular}
-    \end{center}
-\end{table}
 
-\begin{table}[H]
-    \begin{center}
-        \caption{RH nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. RH is expressed in percentage of deviation wth respect to the reference value $RH_{ref}$ = 0.65}\label{Climate_Change_RHnode_dists}
-        \begin{tabular}{P{2.5cm}P{8cm}}
-            \toprule
-            \textbf{Node} & \textbf{CPT} \\
-            \midrule
-            $RH \_ int \_ 2020$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(9.35e^{-2}; 5.66e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(8.48e^{-2}; 6.42e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(8.19e^{-2}; 5.00e^{-2}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2030$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(9.52e^{-2}; 5.20e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(9.18e^{-2}; 5.42e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(1.11e^{-1}; 5.83e^{-2}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2040$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.01e^{-1}; 5.67e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.12e^{-1}; 6.61e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(1.44e^{-1}; 7.07e^{-2}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2050$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.16e^{-1}; 6.56e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.34e^{-1}; 6.63e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(1.66e^{-1}; 6.73e^{-2}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2060$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.27e^{-1}; 6.63e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.50e^{-1}; 7.39e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(1.90e^{-1}; 7.26e^{-2}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2070$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.25e^{-1}; 6.80e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.60e^{-1}; 8.14e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(2.30e^{-1}; 8.92e^{-2}); 0, 1)$ \\   
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2080$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.42e^{-1}; 7.54e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.71e^{-1}; 7.88e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(2.95e^{-1}; 1.91e^{-1}); 0, 1)$ \\   
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2090$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.41e^{-1}; 8.12e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.79e^{-1}; 8.25e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(3.28e^{-1}; 1.24e^{-1}); 0, 1)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $RH \_ int \_ 2100$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(1.34e^{-1}; 8.97e^{-2}); 0, 1)$ \\
-                    \:ssp2 & $Trunc(N(1.96e^{-1}; 8.64e^{-2}); 0, 1)$ \\
-                    \:ssp5 & $Trunc(N(3.85e^{-1}; 1.43e^{-1}); 0, 1)$ \\
-                \end{tabular}
-        \end{tabular}
-    \end{center}
-\end{table}
+\begin{longtable}{P{2.5cm}P{8cm}}
+\caption{Temperature nodes CPTs for the precise eBN of Fig.~\ref{fig:precise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_dists} \\
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endfirsthead
 
-\begin{table}[H]
-    \begin{center}
-    \caption{$CO_2$ concentration nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. $CO_2$ concentrations are measured in $ppm$}\label{Climate_Change_CO2node_dists}
-        \begin{tabular}{P{2.7cm}P{8cm}}
-            \toprule
-            \textbf{Node} & \textbf{CPT} \\
-            \midrule
-            $ppm \_CO_2 \_ 2020$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $412.5$ \\
-                    \:ssp2 & $412.5$ \\
-                    \:ssp5 & $412.5$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2030$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(430.8; 6.89); 0)$ \\
-                    \:ssp2 & $Trunc(N(435.0; 7.83); 0)$ \\
-                    \:ssp5 & $Trunc(N(448.8; 9.87); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2040$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(440.2; 6.89); 0)$ \\
-                    \:ssp2 & $Trunc(N(460.8; 7.37); 0)$ \\
-                    \:ssp5 & $Trunc(N(489.4; 8.80); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2050$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(442.7; 7.52); 0)$ \\
-                    \:ssp2 & $Trunc(N(486.5; 7.30); 0)$ \\
-                    \:ssp5 & $Trunc(N(540.5; 10.27); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2060$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(441.7; 4.41); 0)$ \\
-                    \:ssp2 & $Trunc(N(508.9; 8.14); 0)$ \\
-                    \:ssp5 & $Trunc(N(603.5; 9.05); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2070$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(437.5; 3.50); 0)$ \\
-                    \:ssp2 & $Trunc(N(524.3; 7.34); 0)$ \\
-                    \:ssp5 & $Trunc(N(677.1; 8.80); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2080$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(431.6; 3.88); 0)$ \\
-                    \:ssp2 & $Trunc(N(531.1; 6.37); 0)$ \\
-                    \:ssp5 & $Trunc(N(758.2; 9.86); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2090$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(426.0; 4.26); 0)$ \\
-                    \:ssp2 & $Trunc(N(533.7; 5.34); 0)$ \\
-                    \:ssp5 & $Trunc(N(844.8; 10.13); 0)$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $ppm \_CO_2 \_ 2100$ & 
-                \begin{tabular}{P{2cm}P{5cm}}
-                    \textbf{proj} & \textbf{distribution} \\
-                    \midrule
-                    \:ssp1 & $Trunc(N(420.9; 4.63); 0)$ \\
-                    \:ssp2 & $Trunc(N(538.4; 4.30); 0)$ \\
-                    \:ssp5 & $Trunc(N(935.9; 9.36); 0)$ \\
-                \end{tabular}
-        \end{tabular}
-    \end{center}
-\end{table}
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+$T\_2020$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
+ssp2 & $Trunc(N(284.1; 0.85); 0, \infty)$ \\
+ssp5 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2030$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+ssp2 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+ssp5 & $Trunc(N(284.3; 1.13); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2040$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+ssp2 & $Trunc(N(284.6; 0.85); 0, \infty)$ \\
+ssp5 & $Trunc(N(284.9; 1.14); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2050$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.5; 0.85); 0, \infty)$ \\
+ssp2 & $Trunc(N(284.8; 1.14); 0, \infty)$ \\
+ssp5 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2060$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
+ssp2 & $Trunc(N(285.1; 0.85); 0, \infty)$ \\
+ssp5 & $Trunc(N(285.9; 1.14); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2070$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
+ssp2 & $Trunc(N(285.2; 1.14); 0, \infty)$ \\
+ssp5 & $Trunc(N(286.5; 1.15); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2080$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(285.0; 1.14); 0, \infty)$ \\
+ssp2 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
+ssp5 & $Trunc(N(287.4; 1.44); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2090$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(284.8; 1.42); 0, \infty)$ \\
+ssp2 & $Trunc(N(286.7; 1.14); 0, \infty)$ \\
+ssp5 & $Trunc(N(288.1; 1.44); 0, \infty)$ \\
+\end{tabular} \\
+
+\midrule
+$T\_2100$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(283.7; 1.42); 0, \infty)$ \\
+ssp2 & $Trunc(N(286.0; 1.14); 0, \infty)$ \\
+ssp5 & $Trunc(N(288.9; 1.45); 0, \infty)$ \\
+\end{tabular} \\
+\end{longtable}
+
+% \begin{center}
+% \captionsetup{type=table}
+% \caption{Temperature nodes CPTs for the precise eBN of Fig.~\ref{fig:precise_ebn}. Temperatures are measured in $K$.}
+% \label{Climate_Change_Tnode_dists}
+
+% \begin{table}[H]
+%     \begin{center}
+%     \caption{Temperature nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_dists}
+%         \begin{tabular}{P{2.5cm}P{8cm}}
+%             \toprule
+%             \textbf{Node} & \textbf{CPT} \\
+%             \midrule
+%             $T \_ 2020$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(284.1; 0.85); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(283.9; 0.85); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2030$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(284.3; 1.13); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2040$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.2; 0.85); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(284.6; 0.85); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(284.9; 1.14); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2050$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.5; 0.85); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(284.8; 1.14); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2060$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(285.1; 0.85); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(285.9; 1.14); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2070$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.7; 1.13); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(285.2; 1.14); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(286.5; 1.15); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2080$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(285.0; 1.14); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(285.4; 1.14); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(287.4; 1.44); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2090$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(284.8; 1.42); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(286.7; 1.14); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(288.1; 1.44); 0, \infty)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2100$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(283.7; 1.42); 0, \infty)$ \\
+%                     \:ssp2 & $Trunc(N(286.0; 1.14); 0, \infty)$ \\
+%                     \:ssp5 & $Trunc(N(288.9; 1.45); 0, \infty)$ \\
+%                 \end{tabular}
+%         \end{tabular}
+%     \end{center}
+% \end{table}
+
+\begin{longtable}{P{2.5cm}P{8cm}}
+\caption{RH nodes CPTs for the precise eBN of Fig.~\ref{fig:precise_ebn}. RH is expressed in percentage of deviation with respect to the reference value $RH_{ref}$ = 0.65}\label{Climate_Change_RHnode_dists} \\
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+$RH\_int\_2020$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(9.35e^{-2}; 5.66e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(8.48e^{-2}; 6.42e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(8.19e^{-2}; 5.00e^{-2}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2030$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(9.52e^{-2}; 5.20e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(9.18e^{-2}; 5.42e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(1.11e^{-1}; 5.83e^{-2}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2040$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.01e^{-1}; 5.67e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.12e^{-1}; 6.61e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(1.44e^{-1}; 7.07e^{-2}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2050$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.16e^{-1}; 6.56e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.34e^{-1}; 6.63e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(1.66e^{-1}; 6.73e^{-2}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2060$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.27e^{-1}; 6.63e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.50e^{-1}; 7.39e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(1.90e^{-1}; 7.26e^{-2}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2070$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.25e^{-1}; 6.80e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.60e^{-1}; 8.14e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(2.30e^{-1}; 8.92e^{-2}); 0, 1)$ \\   
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2080$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.42e^{-1}; 7.54e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.71e^{-1}; 7.88e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(2.95e^{-1}; 1.91e^{-1}); 0, 1)$ \\   
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2090$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.41e^{-1}; 8.12e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.79e^{-1}; 8.25e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(3.28e^{-1}; 1.24e^{-1}); 0, 1)$ \\
+\end{tabular} \\
+
+\midrule
+$RH\_int\_2100$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(1.34e^{-1}; 8.97e^{-2}); 0, 1)$ \\
+ssp2 & $Trunc(N(1.96e^{-1}; 8.64e^{-2}); 0, 1)$ \\
+ssp5 & $Trunc(N(3.85e^{-1}; 1.43e^{-1}); 0, 1)$ \\
+\end{tabular} \\
+\end{longtable}
+
+% \begin{table}[H]
+%     \begin{center}
+%         \caption{RH nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. RH is expressed in percentage of deviation wth respect to the reference value $RH_{ref}$ = 0.65}\label{Climate_Change_RHnode_dists}
+%         \begin{tabular}{P{2.5cm}P{8cm}}
+%             \toprule
+%             \textbf{Node} & \textbf{CPT} \\
+%             \midrule
+%             $RH \_ int \_ 2020$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(9.35e^{-2}; 5.66e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(8.48e^{-2}; 6.42e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(8.19e^{-2}; 5.00e^{-2}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2030$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(9.52e^{-2}; 5.20e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(9.18e^{-2}; 5.42e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(1.11e^{-1}; 5.83e^{-2}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2040$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.01e^{-1}; 5.67e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.12e^{-1}; 6.61e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(1.44e^{-1}; 7.07e^{-2}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2050$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.16e^{-1}; 6.56e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.34e^{-1}; 6.63e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(1.66e^{-1}; 6.73e^{-2}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2060$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.27e^{-1}; 6.63e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.50e^{-1}; 7.39e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(1.90e^{-1}; 7.26e^{-2}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2070$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.25e^{-1}; 6.80e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.60e^{-1}; 8.14e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(2.30e^{-1}; 8.92e^{-2}); 0, 1)$ \\   
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2080$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.42e^{-1}; 7.54e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.71e^{-1}; 7.88e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(2.95e^{-1}; 1.91e^{-1}); 0, 1)$ \\   
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2090$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.41e^{-1}; 8.12e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.79e^{-1}; 8.25e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(3.28e^{-1}; 1.24e^{-1}); 0, 1)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $RH \_ int \_ 2100$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(1.34e^{-1}; 8.97e^{-2}); 0, 1)$ \\
+%                     \:ssp2 & $Trunc(N(1.96e^{-1}; 8.64e^{-2}); 0, 1)$ \\
+%                     \:ssp5 & $Trunc(N(3.85e^{-1}; 1.43e^{-1}); 0, 1)$ \\
+%                 \end{tabular}
+%         \end{tabular}
+%     \end{center}
+% \end{table}
+
+\begin{longtable}{P{2.7cm}P{8cm}}
+\caption{$CO_2$ concentration nodes CPTs for the precise eBN of Fig.~\ref{fig:precise_ebn}. $CO_2$ concentrations are measured in $ppm$}\label{Climate_Change_CO2node_dists} \\
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+$ppm\_CO_2\_2020$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $412.5$ \\
+ssp2 & $412.5$ \\
+ssp5 & $412.5$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2030$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(430.8; 6.89); 0)$ \\
+ssp2 & $Trunc(N(435.0; 7.83); 0)$ \\
+ssp5 & $Trunc(N(448.8; 9.87); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2040$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(440.2; 6.89); 0)$ \\
+ssp2 & $Trunc(N(460.8; 7.37); 0)$ \\
+ssp5 & $Trunc(N(489.4; 8.80); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2050$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(442.7; 7.52); 0)$ \\
+ssp2 & $Trunc(N(486.5; 7.30); 0)$ \\
+ssp5 & $Trunc(N(540.5; 10.27); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2060$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(441.7; 4.41); 0)$ \\
+ssp2 & $Trunc(N(508.9; 8.14); 0)$ \\
+ssp5 & $Trunc(N(603.5; 9.05); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2070$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(437.5; 3.50); 0)$ \\
+ssp2 & $Trunc(N(524.3; 7.34); 0)$ \\
+ssp5 & $Trunc(N(677.1; 8.80); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2080$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(431.6; 3.88); 0)$ \\
+ssp2 & $Trunc(N(531.1; 6.37); 0)$ \\
+ssp5 & $Trunc(N(758.2; 9.86); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2090$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(426.0; 4.26); 0)$ \\
+ssp2 & $Trunc(N(533.7; 5.34); 0)$ \\
+ssp5 & $Trunc(N(844.8; 10.13); 0)$ \\
+\end{tabular} \\
+
+\midrule
+$ppm\_CO_2\_2100$ & 
+\begin{tabular}{@{}P{2cm}P{5cm}@{}}
+\textbf{proj} & \textbf{distribution} \\
+\midrule
+ssp1 & $Trunc(N(420.9; 4.63); 0)$ \\
+ssp2 & $Trunc(N(538.4; 4.30); 0)$ \\
+ssp5 & $Trunc(N(935.9; 9.36); 0)$ \\
+\end{tabular} \\
+\end{longtable}
+
+% \begin{table}[H]
+%     \begin{center}
+%     \caption{$CO_2$ concentration nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. $CO_2$ concentrations are measured in $ppm$}\label{Climate_Change_CO2node_dists}
+%         \begin{tabular}{P{2.7cm}P{8cm}}
+%             \toprule
+%             \textbf{Node} & \textbf{CPT} \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2020$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $412.5$ \\
+%                     \:ssp2 & $412.5$ \\
+%                     \:ssp5 & $412.5$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2030$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(430.8; 6.89); 0)$ \\
+%                     \:ssp2 & $Trunc(N(435.0; 7.83); 0)$ \\
+%                     \:ssp5 & $Trunc(N(448.8; 9.87); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2040$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(440.2; 6.89); 0)$ \\
+%                     \:ssp2 & $Trunc(N(460.8; 7.37); 0)$ \\
+%                     \:ssp5 & $Trunc(N(489.4; 8.80); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2050$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(442.7; 7.52); 0)$ \\
+%                     \:ssp2 & $Trunc(N(486.5; 7.30); 0)$ \\
+%                     \:ssp5 & $Trunc(N(540.5; 10.27); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2060$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(441.7; 4.41); 0)$ \\
+%                     \:ssp2 & $Trunc(N(508.9; 8.14); 0)$ \\
+%                     \:ssp5 & $Trunc(N(603.5; 9.05); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2070$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(437.5; 3.50); 0)$ \\
+%                     \:ssp2 & $Trunc(N(524.3; 7.34); 0)$ \\
+%                     \:ssp5 & $Trunc(N(677.1; 8.80); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2080$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(431.6; 3.88); 0)$ \\
+%                     \:ssp2 & $Trunc(N(531.1; 6.37); 0)$ \\
+%                     \:ssp5 & $Trunc(N(758.2; 9.86); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2090$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(426.0; 4.26); 0)$ \\
+%                     \:ssp2 & $Trunc(N(533.7; 5.34); 0)$ \\
+%                     \:ssp5 & $Trunc(N(844.8; 10.13); 0)$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $ppm \_CO_2 \_ 2100$ & 
+%                 \begin{tabular}{P{2cm}P{5cm}}
+%                     \textbf{proj} & \textbf{distribution} \\
+%                     \midrule
+%                     \:ssp1 & $Trunc(N(420.9; 4.63); 0)$ \\
+%                     \:ssp2 & $Trunc(N(538.4; 4.30); 0)$ \\
+%                     \:ssp5 & $Trunc(N(935.9; 9.36); 0)$ \\
+%                 \end{tabular}
+%         \end{tabular}
+%     \end{center}
+% \end{table}
 
 
 \section{Appendix}\label{appendixB}
 The same data set used for Appendix~\ref{appendixA} have been employed to build the intervals for each temperature node of the imprecise eBN shown in Fig.~\ref{fig:imprecise_ebn}. Lower and upper interval bounds have been evaluated respectively as the 95\% lower and upper confidence intervals.
-\begin{table}[H]
-    \begin{center}
-    \caption{Temperature nodes CPTs for the imprecise eBN of Fig.\ref{fig:imprecise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_interval}
-        \begin{tabular}{P{2.5cm}P{7.7cm}}
-            \toprule
-            \textbf{Node} & \textbf{CPT} \\
-            \midrule
-            $T \_ 2020$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $281.8723$ & $285.5608$\\ 
-                    \:ssp2 & $281.6916$ & $286.8414$ \\
-                    \:ssp5 & $281.5062$ & $286.7255$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2030$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $282.0982$ & $287.0741$ \\
-                    \:ssp2 & $282.2602$ & $286.8415$ \\
-                    \:ssp5 & $281.5062$ & $286.7255$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2040$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $282.2752$ & $285.7549$ \\
-                    \:ssp2 & $282.2368$ & $287.6774$ \\
-                    \:ssp5 & $281.8712$ & $287.1479$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2050$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $282.1972$ & $286.3009$ \\
-                    \:ssp2 & $282.1169$ & $286.5602$ \\
-                    \:ssp5 & $282.6306$ & $287.7634$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2060$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $281.9507$ & $287.6729$ \\
-                    \:ssp2 & $282.8809$ & $287.8323$ \\
-                    \:ssp5 & $284.1444$ & $288.1458$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2070$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $282.4679$ & $286.3140$ \\
-                    \:ssp2 & $282.1799$ & $287.8909$ \\
-                    \:ssp5 & $283.5394$ & $289.1019$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2080$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $282.0230$ & $287.2399$ \\
-                    \:ssp2 & $283.1048$ & $287.3655$ \\
-                    \:ssp5 & $284.8888$ & $289.7104$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2090$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $281.3064$ & $288.7765$ \\
-                    \:ssp2 & $282.5490$ & $287.8518$ \\
-                    \:ssp5 & $284.3658$ & $290.5262$ \\
-                \end{tabular}
-            \\
-            \midrule
-            $T \_ 2100$ & 
-                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
-                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
-                    \midrule
-                    \:ssp1 & $281.7551$ & $287.4349$ \\
-                    \:ssp2 & $283.0796$ & $288.4324$ \\
-                    \:ssp5 & $285.1481$ & $292.2743$ \\
-                \end{tabular}
-        \end{tabular}
-    \end{center}
-\end{table}
+\begin{longtable}{P{2.5cm}P{7.7cm}}
+\caption{Temperature nodes CPTs for the imprecise eBN of Fig.~\ref{fig:imprecise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_interval} \\
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Node} & \textbf{CPT} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{2}{r}{\textit{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+$T\_2020$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 281.8723 & 285.5608 \\
+ssp2 & 281.6916 & 286.8414 \\
+ssp5 & 281.5062 & 286.7255 \\
+\end{tabular} \\
+
+\midrule
+$T\_2030$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 282.0982 & 287.0741 \\
+ssp2 & 282.2602 & 286.8415 \\
+ssp5 & 281.5062 & 286.7255 \\
+\end{tabular} \\
+
+\midrule
+$T\_2040$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 282.2752 & 285.7549 \\
+ssp2 & 282.2368 & 287.6774 \\
+ssp5 & 281.8712 & 287.1479 \\
+\end{tabular} \\
+
+\midrule
+$T\_2050$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 282.1972 & 286.3009 \\
+ssp2 & 282.1169 & 286.5602 \\
+ssp5 & 282.6306 & 287.7634 \\
+\end{tabular} \\
+
+\midrule
+$T\_2060$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 281.9507 & 287.6729 \\
+ssp2 & 282.8809 & 287.8323 \\
+ssp5 & 284.1444 & 288.1458 \\
+\end{tabular} \\
+
+\midrule
+$T\_2070$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 282.4679 & 286.3140 \\
+ssp2 & 282.1799 & 287.8909 \\
+ssp5 & 283.5394 & 289.1019 \\
+\end{tabular} \\
+
+\midrule
+$T\_2080$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 282.0230 & 287.2399 \\
+ssp2 & 283.1048 & 287.3655 \\
+ssp5 & 284.8888 & 289.7104 \\
+\end{tabular} \\
+
+\midrule
+$T\_2090$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 281.3064 & 288.7765 \\
+ssp2 & 282.5490 & 287.8518 \\
+ssp5 & 284.3658 & 290.5262 \\
+\end{tabular} \\
+
+\midrule
+$T\_2100$ & 
+\begin{tabular}{@{}P{2.4cm}P{2cm}P{2cm}@{}}
+\textbf{proj} & \textbf{lb} & \textbf{ub} \\
+\midrule
+ssp1 & 281.7551 & 287.4349 \\
+ssp2 & 283.0796 & 288.4324 \\
+ssp5 & 285.1481 & 292.2743 \\
+\end{tabular} \\
+\end{longtable}
+
+% \begin{table}[H]
+%     \begin{center}
+%     \caption{Temperature nodes CPTs for the imprecise eBN of Fig.\ref{fig:imprecise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_interval}
+%         \begin{tabular}{P{2.5cm}P{7.7cm}}
+%             \toprule
+%             \textbf{Node} & \textbf{CPT} \\
+%             \midrule
+%             $T \_ 2020$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $281.8723$ & $285.5608$\\ 
+%                     \:ssp2 & $281.6916$ & $286.8414$ \\
+%                     \:ssp5 & $281.5062$ & $286.7255$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2030$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $282.0982$ & $287.0741$ \\
+%                     \:ssp2 & $282.2602$ & $286.8415$ \\
+%                     \:ssp5 & $281.5062$ & $286.7255$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2040$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $282.2752$ & $285.7549$ \\
+%                     \:ssp2 & $282.2368$ & $287.6774$ \\
+%                     \:ssp5 & $281.8712$ & $287.1479$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2050$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $282.1972$ & $286.3009$ \\
+%                     \:ssp2 & $282.1169$ & $286.5602$ \\
+%                     \:ssp5 & $282.6306$ & $287.7634$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2060$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $281.9507$ & $287.6729$ \\
+%                     \:ssp2 & $282.8809$ & $287.8323$ \\
+%                     \:ssp5 & $284.1444$ & $288.1458$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2070$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $282.4679$ & $286.3140$ \\
+%                     \:ssp2 & $282.1799$ & $287.8909$ \\
+%                     \:ssp5 & $283.5394$ & $289.1019$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2080$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $282.0230$ & $287.2399$ \\
+%                     \:ssp2 & $283.1048$ & $287.3655$ \\
+%                     \:ssp5 & $284.8888$ & $289.7104$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2090$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $281.3064$ & $288.7765$ \\
+%                     \:ssp2 & $282.5490$ & $287.8518$ \\
+%                     \:ssp5 & $284.3658$ & $290.5262$ \\
+%                 \end{tabular}
+%             \\
+%             \midrule
+%             $T \_ 2100$ & 
+%                 \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+%                     \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+%                     \midrule
+%                     \:ssp1 & $281.7551$ & $287.4349$ \\
+%                     \:ssp2 & $283.0796$ & $288.4324$ \\
+%                     \:ssp5 & $285.1481$ & $292.2743$ \\
+%                 \end{tabular}
+%         \end{tabular}
+%     \end{center}
+% \end{table}
