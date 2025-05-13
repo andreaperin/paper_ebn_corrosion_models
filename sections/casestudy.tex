@@ -64,7 +64,7 @@ In this study, a time-dependent model is applied, incorporating the chloride dif
     C(z, t) = C_0^{Cl} \left[ 1-erf \left(\frac{z}{2\sqrt{k_e \ k_t \ k_c \ f_T^{Cl}(t) \ f_{RH}^{Cl}(t) \ D_0^{Cl} \ \omega \ \tau(t, \Delta T)}} \right) \right]
 \end{equation}
 Here, $C_0^{Cl}$ represents the chloride concentration at the boundary; for atmospheric areas remote from coasts, $C_0^{Cl}$ is typically around \SI{1.15}{\kilogram\per\cubic\meter}, whereas, in coastal or tidal areas, the chloride concentration at the surface is significantly higher. $D_0^{Cl}$ is the reference chloride diffusion coefficient; $k_e$ is the environmental coefficient; $k_t$ is the test method factor, and $k_c$ is the curing factor. 
-Coefficient $\omega$ represent the number of seconds in 10 years while $\tau(t, \Delta T)$ has the same definition given in Sec.~\ref{Carbonation_corrosion_Chpt}.\\
+Coefficient $\omega$ represents the number of seconds in 10 years while $\tau(t, \Delta T)$ has the same definition given in Sec.~\ref{Carbonation_corrosion_Chpt}.\\
 Similar to carbonation, there are two time-dependent quantities that account for the effects of climate change projections on temperature and relative humidity: $f_{T}^{Cl}$ and $f_{RH}^{Cl}$.
 \begin{equation}
     \label{eq_f_rh_cl}
@@ -119,7 +119,6 @@ For each time slice, a dedicated model computes the incremental carbonation dept
 If the resulting total exceeds the threshold of 3 cm, defined by~\textcite{Carbonation_BASTIDASARTEAGA}, the system transitions to a failure state. 
 In the carbonation model, the inputs from the $ratio\_w/c$ node and all the RH percentage change nodes are modified before being passed to the computational component. 
 Specifically, the $ratio\_w/c$ samples are scaled by a factor of 0.1 and then shifted by +0.5, while the RH percentage change samples are randomly assigned as either positive or negative deviations from the reference RH.
-% Further implementation details for the \textit{carb\_depth} node are available in the associated code.
 
 \subsubsection{eBN -- Chloride-induced corrosion model}\label{ebn_chloride_section}
 The chloride-induced corrosion process is represented by the eBN depicted in Fig.~\ref{chloride_ebn}. This model includes some of the same continuous nodes as the corrosion process eBN, specifically for temperature, $CO_2$ concentration, RH. It also shares the  discrete nodes \textit{proj}, \textit{t} and \textit{DeH}. The effect of relative humidity on the chloride penetration is shown in Fig.~\ref{RH vs chloride depth}
