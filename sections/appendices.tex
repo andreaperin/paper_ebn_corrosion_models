@@ -5,9 +5,12 @@
 %chktex-file 8
 %chktex-file 25
 \section{Appendix}\label{appendixA}
+
+To simulate long-term climate behaviour, a range of Global Climate Models (GCMs) is utilized to represent large-scale environmental dynamics. For regional-scale applications, these coarse-resolution outputs are refined through down-scaling techniques using Regional Climate Models (RCMs). Climate projections for Belgium, based on \textit{ssp} scenarios, are derived from the Coupled Model Intercomparison Project Phase 6 (CMIP6), which aggregates output from multiple GCMs and RCMs~\cite{CMIP6,Copernicus_Climate_Change}.\\
+The conditional probability tables (CPTs) for temperature, relative humidity, and $CO_2$ concentration nodes in the eBN shown in Fig.~\ref{fig:precise_ebn} are detailed in Tab.~\ref{Climate_Change_Tnode_dists},~\ref{Climate_Change_RHnode_dists}, and~\ref{Climate_Change_CO2node_dists}, respectively. These distributions are estimated by fitting normal distributions at each time step and for each projection.
 \begin{table}[H]
     \begin{center}
-    \caption{Temperature nodes CPTs for the precise eBN of Fig.\ref{carbonation_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_dists}
+    \caption{Temperature nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_dists}
         \begin{tabular}{P{2.5cm}P{8cm}}
             \toprule
             \textbf{Node} & \textbf{CPT} \\
@@ -106,7 +109,7 @@
 
 \begin{table}[H]
     \begin{center}
-        \caption{RH nodes CPTs for the precise eBN of Fig.\ref{carbonation_ebn}. RH is expressed in percentage of deviation wth respect to the reference value $RH_{ref}$ = 0.65}\label{Climate_Change_RHnode_dists}
+        \caption{RH nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. RH is expressed in percentage of deviation wth respect to the reference value $RH_{ref}$ = 0.65}\label{Climate_Change_RHnode_dists}
         \begin{tabular}{P{2.5cm}P{8cm}}
             \toprule
             \textbf{Node} & \textbf{CPT} \\
@@ -205,7 +208,7 @@
 
 \begin{table}[H]
     \begin{center}
-    \caption{$CO_2$ concentration nodes CPTs for the precise eBN of Fig.\ref{carbonation_ebn}. $CO_2$ concentrations are measured in $ppm$}\label{Climate_Change_CO2node_dists}
+    \caption{$CO_2$ concentration nodes CPTs for the precise eBN of Fig.\ref{fig:precise_ebn}. $CO_2$ concentrations are measured in $ppm$}\label{Climate_Change_CO2node_dists}
         \begin{tabular}{P{2.7cm}P{8cm}}
             \toprule
             \textbf{Node} & \textbf{CPT} \\
@@ -297,6 +300,108 @@
                     \:ssp1 & $Trunc(N(420.9; 4.63); 0)$ \\
                     \:ssp2 & $Trunc(N(538.4; 4.30); 0)$ \\
                     \:ssp5 & $Trunc(N(935.9; 9.36); 0)$ \\
+                \end{tabular}
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
+\section{Appendix}\label{appendixB}
+The same data set used for Appendix~\ref{appendixA} have been employed to build the intervals for each temperature node of the imprecise eBN shown in Fig.~\ref{fig:imprecise_ebn}. Lower and upper interval bounds have been evaluated respectively as the 95\% lower and upper confidence intervals.
+\begin{table}[H]
+    \begin{center}
+    \caption{Temperature nodes CPTs for the imprecise eBN of Fig.\ref{fig:imprecise_ebn}. Temperatures are measured in $K$}\label{Climate_Change_Tnode_interval}
+        \begin{tabular}{P{2.5cm}P{7.7cm}}
+            \toprule
+            \textbf{Node} & \textbf{CPT} \\
+            \midrule
+            $T \_ 2020$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.8723$ & $285.5608$\\ 
+                    \:ssp2 & $281.6916$ & $286.8414$ \\
+                    \:ssp5 & $281.5062$ & $286.7255$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2030$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.0982$ & $287.0741$ \\
+                    \:ssp2 & $282.2602$ & $286.8415$ \\
+                    \:ssp5 & $281.5062$ & $286.7255$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2040$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.2752$ & $285.7549$ \\
+                    \:ssp2 & $282.2368$ & $287.6774$ \\
+                    \:ssp5 & $281.8712$ & $287.1479$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2050$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.1972$ & $286.3009$ \\
+                    \:ssp2 & $282.1169$ & $286.5602$ \\
+                    \:ssp5 & $282.6306$ & $287.7634$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2060$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.9507$ & $287.6729$ \\
+                    \:ssp2 & $282.8809$ & $287.8323$ \\
+                    \:ssp5 & $284.1444$ & $288.1458$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2070$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.4679$ & $286.3140$ \\
+                    \:ssp2 & $282.1799$ & $287.8909$ \\
+                    \:ssp5 & $283.5394$ & $289.1019$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2080$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $282.0230$ & $287.2399$ \\
+                    \:ssp2 & $283.1048$ & $287.3655$ \\
+                    \:ssp5 & $284.8888$ & $289.7104$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2090$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.3064$ & $288.7765$ \\
+                    \:ssp2 & $282.5490$ & $287.8518$ \\
+                    \:ssp5 & $284.3658$ & $290.5262$ \\
+                \end{tabular}
+            \\
+            \midrule
+            $T \_ 2100$ & 
+                \begin{tabular}{P{2.4cm}P{2cm}P{2cm}}
+                    \textbf{proj} & \textbf{lb} & \textbf{ub}\\
+                    \midrule
+                    \:ssp1 & $281.7551$ & $287.4349$ \\
+                    \:ssp2 & $283.0796$ & $288.4324$ \\
+                    \:ssp5 & $285.1481$ & $292.2743$ \\
                 \end{tabular}
         \end{tabular}
     \end{center}
