@@ -42,8 +42,8 @@ y_vals = df.Δx_c
 plt = @pgf Axis(
     {
         xlabel = L"RH",
-        ylabel = L"\Delta carbonation \ [cm]",
-        title = L"RH \ vs \ \Delta \_ carbonation ",
+        ylabel = L"\Delta carbonation \ depth \ [cm]",
+        title = L"RH \ vs \ \Delta \ carbonation \ depth ",
         width = "10cm",
         height = "8cm",
         grid = "major",
@@ -92,8 +92,8 @@ y_vals = df.corrosion_depth
 plt = @pgf Axis(
     {
         xlabel = L"RH",
-        ylabel = L"corrosion \ depth \ [m]",
-        title = L"RH \ vs \ corrosion \_ depth ",
+        ylabel = L"chloride \ penetration \ depth \ [m]",
+        title = L"RH \ vs \ chloride \ penetration \ depth ",
         width = "10cm",
         height = "8cm",
         grid = "major",

@@ -39,9 +39,9 @@ y_vals = df.corrosion_depth
 
 plt = @pgf Axis(
     {
-        xlabel = L"[Ch] \ boundary \ [kg/$m^3$]",
-        ylabel = L"corrosion \ depth \ [m]",
-        title = L"[Ch] \ vs \ corrosion \_ depth ",
+        xlabel = L"[Ch] \ [kg/$m^3$]",
+        ylabel = L"chloride \ penetration \ depth \ [m]",
+        title = L"[Ch] \ vs \ chloride \ penetration \ depth",
         width = "10cm",
         height = "8cm",
         grid = "major",
