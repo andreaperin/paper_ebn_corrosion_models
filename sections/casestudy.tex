@@ -87,7 +87,7 @@ The eBN representing the carbonation process, illustrated in Fig.~\ref{carbonati
 A third discrete root node, \textit{DeH}, is also shown in Fig.~\ref{carbonation_ebn}. This node represents a control variable to reduce the RH below a threshold. Specifically, whenever RH exceeds 0.25, the node enforces a reduction to 0.2. These values were selected based on the influence of RH on the carbonation model, as illustrated in Fig.~\ref{carbonation_depth vs RH}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/10_RH_carb.pdf}
+    \includegraphics[scale=0.7]{imgs/pdfs/10_RH_carb.pdf}
     \caption{RH effect on carbonation depth}\label{carbonation_depth vs RH}
 \end{figure}
 The \textit{DeH} node is modelled as a Boolean variable with two states: failed ($P_{F} = 10^{-4}$) and working ($P_{W} = 1 - 10^{-4}$). \\
@@ -129,12 +129,12 @@ The chloride-induced corrosion process is represented by the eBN depicted in Fig
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/11_RH_corr.pdf}
+    \includegraphics[scale=0.7]{imgs/pdfs/11_RH_corr.pdf}
     \caption{RH effect on chloride penetration depth}\label{RH vs chloride depth}
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/11_Chloride_corr.pdf}
+    \includegraphics[scale=0.7]{imgs/pdfs/11_Chloride_corr.pdf}
     \caption{Chloride concentration at system boundary effect on chloride penetration depth}\label{Chloride vs corrosion depth}
 \end{figure}
 
@@ -182,7 +182,7 @@ In this way is possible to obtain the two CPTs associated with the two discrete 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/13_total_rbn_precise.pdf}
+    \includegraphics[scale=0.5]{imgs/pdfs/13_total_rbn_precise.pdf}
     \caption{Concrete corrosion risk rBN with precise nodes}\label{fig:precise_rbn}
 \end{figure}
 
@@ -200,9 +200,8 @@ A more robust way for dealing with the epistemic uncertainty problem of future p
 \end{figure}
 
 This concept has been applied to temperature projection obtaining the new node presented in Fig.~\ref{fig:imprecise_ebn} and defined in Tab.~\ref{Climate_Change_Tnode_interval}. The reduced BN of this imprecise eBN is the Credal Network presented in Fig.~\ref{fig:imprecise_rbn}.
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/15_total_rbn_imprecise.pdf}
+    \includegraphics[scale=0.5]{imgs/pdfs/15_total_rbn_imprecise.pdf}
     \caption{Concrete corrosion risk rBN with imprecise nodes}\label{fig:imprecise_rbn}
 \end{figure}

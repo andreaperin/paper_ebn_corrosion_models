@@ -23,14 +23,14 @@ Sobol' indices have been computed for each decade and for all considered climate
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
     \caption{Sobol' indices of the model for carbonation induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_carb_2020ssp1}
 \end{figure}
 In Fig.~\ref{Sobol_carb_2020uniform}, Sobol' indices are presented under the assumption that all input variables follow uniform probability distributions. For the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i}, the uniform distribution bounds were defined as the minimum and maximum values obtained from $10^4$ samples drawn from their respective original distributions. For the time-dependent variables \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int}, the uniform bounds for each decade were derived from the minimum and maximum of a merged set of $3 \times 10^4$ samples, aggregated across all climate change projections. This approach is adopted to enhance the potential influence of the distribution tails, particularly those of the original Gaussian distributions, thereby allowing a more comprehensive assessment of the input variables' impact on model output variability. 
 The analysis confirms that relative humidity continues to exert the most significant influence on the variability of the model output, even under the assumption of uniformly distributed inputs.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
     \caption{Sobol' indices of the model for carbonation induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_carb_2020uniform}
 \end{figure}
 
@@ -38,13 +38,13 @@ The analysis confirms that relative humidity continues to exert the most signifi
 The same procedure presented in Sec.~\ref{SA_carbonation} have been applied to the chloride-induced corrosion model, obtaining the results presented in Fig.~\ref{Sobol_ch_2020ssp1} and Fig.~\ref{Sobol_ch_2020uniform}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/chloride/19_sobols_withRH_2020_ssp1.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/chloride/19_sobols_withRH_2020_ssp1.pdf}
     \caption{Sobol' indices of the model for chloride induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_ch_2020ssp1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/chloride/18_sobols_withRH_uniform_2020.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/chloride/18_sobols_withRH_uniform_2020.pdf}
     \caption{Sobol' indices of the model for chloride induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_ch_2020uniform}
 \end{figure}
 For the chloride-induced corrosion model, relative humidity is identified as the primary driver of output variability in both distributional scenarios. However, under the uniform input assumption, additional factors such as temperature, the curing factor, and the environmental factor also exhibit a non-negligible influence on the output variance.
@@ -386,18 +386,18 @@ In this section results regarding the probability of failure for the two nodes r
 In particular, as expected is possible to see that in all the analysed cases of Fig.~\ref{comparizon_carb},~\ref{comparizon_ch_brokenbroken} and~\ref{comparizon_ch_brokenworking}, failure probability intervals always contain the crisp failure probability values coming from the precise eBN.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/22_carbonation_comparizon_broken.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/22_carbonation_comparizon_broken.pdf}
     \caption{Failure probabilities comparison between precise and imprecise eBN for carbonation node and scenarios when the \textit{DeH} is broken}\label{comparizon_carb}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/20_Chloride_comparizon_brokenbroken.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/20_Chloride_comparizon_brokenbroken.pdf}
     \caption{Failure probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when both \textit{DeH} and \textit{DeCh} are broken}\label{comparizon_ch_brokenbroken}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{imgs/pdfs/21_Chloride_comparizon_workingbroken.pdf}
+    \includegraphics[width=0.8\linewidth]{imgs/pdfs/21_Chloride_comparizon_workingbroken.pdf}
     \caption{Failure probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when \textit{DeH} is working and \textit{DeCh} is broken}\label{comparizon_ch_brokenworking}
 \end{figure}
