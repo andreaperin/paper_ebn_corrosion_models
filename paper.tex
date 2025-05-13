@@ -21,6 +21,8 @@
 \usepackage{amsmath}
 \usepackage{svg}
 \usepackage{listings}
+\usepackage{appendix}
+
 \usepackage[
     backend=biber,
     style=numeric-comp,
@@ -69,6 +71,10 @@
 
 \newpage
 
-\printbibliography{}
+\appendix
+    \include{sections/appendixA}
+    \include{sections/appendixB}
+\newpage
 
+\printbibliography{}
 \end{document}
