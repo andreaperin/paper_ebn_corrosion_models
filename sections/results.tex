@@ -17,14 +17,14 @@ For these reasons Sobol' indices have been evaluated for both corrosion models t
 \subsubsection{Carbonation-induced corrosion - SA}\label{SA_carbonation}
 The random variables considered in the SA of the carbonation model are the same as those introduced in Sec.~\ref{ebn_chloride_section}. 
 While the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i} follow the same probability distribution across all decades and climatic projections, the distributions of \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int} vary depending on the decade and climate projection. \\ 
-Figure~\ref{Sobol_carb_2020ssp1} shows the Sobol' indices for the carbonation model during the first decade under the ssp1 climate scenario. 
+Figure~\ref{Sobol_carb_2020ssp1} shows the Sobol' indices for the carbonation model during the first decade under the \textit{ssp1} climate scenario. 
 Both the first-order and total-effect Sobol' indices are negligible for all input variables except for relative humidity, indicating that \textit{RH\_int} is the only variable that significantly contributes to the output variance—both independently (first-order effect) and through interactions with other variables (total effect).
-Sobol' indices have been computed for each decade and for all considered climate projections. The results consistently exhibit the same trend as illustrated for the first-decade and ssp1 projection, with relative humidity remaining the dominant factor influencing output variance. 
+Sobol' indices have been computed for each decade and for all considered climate projections. The results consistently exhibit the same trend as illustrated for the first-decade and \textit{ssp1} projection, with relative humidity remaining the dominant factor influencing output variance. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
-    \caption{Sobol' indices of the model for carbonation induced corrosion considering the random variables identified by the year 2020 and the projection ssp1}\label{Sobol_carb_2020ssp1}
+    \caption{Sobol' indices of the model for carbonation induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_carb_2020ssp1}
 \end{figure}
 In Fig.~\ref{Sobol_carb_2020uniform}, Sobol' indices are presented under the assumption that all input variables follow uniform probability distributions. For the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i}, the uniform distribution bounds were defined as the minimum and maximum values obtained from $10^4$ samples drawn from their respective original distributions. For the time-dependent variables \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int}, the uniform bounds for each decade were derived from the minimum and maximum of a merged set of $3 \times 10^4$ samples, aggregated across all climate change projections. This approach is adopted to enhance the potential influence of the distribution tails, particularly those of the original Gaussian distributions, thereby allowing a more comprehensive assessment of the input variables' impact on model output variability. 
 The analysis confirms that relative humidity continues to exert the most significant influence on the variability of the model output, even under the assumption of uniformly distributed inputs.
@@ -39,7 +39,7 @@ The same procedure presented in Sec.~\ref{SA_carbonation} have been applied to t
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{imgs/pdfs/sobols_indices/chloride/19_sobols_withRH_2020_ssp1.pdf}
-    \caption{Sobol' indices of the model for chloride induced corrosion considering the random variables identified by the year 2020 and the projection ssp1}\label{Sobol_ch_2020ssp1}
+    \caption{Sobol' indices of the model for chloride induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_ch_2020ssp1}
 \end{figure}
 
 \begin{figure}[H]
