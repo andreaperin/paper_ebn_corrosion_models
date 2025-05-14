@@ -1,0 +1,25 @@
+### Conclusion
+- We have applied imprecise eBN to address the problem of performing risk assessment under entwined uncertainties arising (mostly) from climatic change projections 
+  - for precise probability distribution
+  - for imprecise probability distribution
+  - we have applied imprecise eBN framework to the radioactive waste disposal case of study
+    - concrete integrity is the main driver of the analysis
+    - concrete integrity have been evaluated using the 2 corrosion models for carbonation-induced corrosion and chloride-induced corrosion 
+    - results obtained are internally coherent showing how the precise failure probability value is always included in the failure probability interval.
+- the usage of imprecise eBN allows for:
+  - aggregate the results coming from different scenario in a framework that can questioned through exact-inference algorithm to perform both prognosis and diagnosis of the system
+  - overcame epistemic uncertainties problem coming from limited or incomplete data, through imprecise probability
+- eBN limitations:
+  - case of study related:
+    - models used to assess carbonation and chloride induced corrosions are simple  
+  - computational related:
+    - precise eBN evaluation of functional nodes rely on standard and advanced Monte Carlo simulations, that must be repeated for all the possible scenario. Whenever the model/s involved are external finite element model with elevated computational time, the computational effort for evaluating the nodes is a problem.
+    - for imprecise eBN this problem is even more highlighted cause the implemented approach are Double Loop Monte Carlo and Random Slicing which still requires standard Monte Carlo simulation together with a global optimization procedure.
+
+- Future works:
+    - concrete degradation have been chosen as the driver for assessing the reliability of the disposal, both other macro-phenomena should be included and studied to obtain a more comprehensive risk assessment.
+    - Presented eBN and imprecise eBN both have 2 final nodes for evaluating the risk, one for carbonation-induced corrosion and one for chloride-induced corrosion. The introduction of a node that unify this two effects in a not trivial should be considered:
+      - trivial ways are, "or-gate" which potentially underestimate the combined effect of the two phenomena in the same spatial point. And "sum-of-effects" which always sum up the corrosion depths induced by carbonation and chloride, which overestimate the combined effect everytime they are taking place in different spatial points.
+      - Therefore a better study regarding this two phenomena should be considered.
+    - control nodes for reducing chloride boundary concentration and relative humidity have been introduced in a trivial way, without considering associated operative costs and optimization of their thresholds and targets, that's something that should be evaluated.
+    - Approximate method for breaking the Double Loop introduced in the imprecise eBN should be considered to reduce the computational burden of the framework, such as CABO and NISS. 
