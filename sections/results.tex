@@ -5,16 +5,16 @@
 %chktex-file 8
 %chktex-file 25
 
-This study applies the eBN framework to conduct a comprehensive risk assessment of concrete structures, focusing specifically on the two principal corrosion processes: carbonation-induced and chloride-induced corrosion. 
+This section presents a comprehensive discussion of the results obtained from the application of the eBN framework in addressing uncertainties associated with concrete corrosion risk, with a particular focus on imprecise data arising from climate change projections. Before delving into these findings, we first summarize the outcomes of the sensitivity analysis (SA) conducted on carbonation-induced and chloride-induced corrosion processes.
 
-\subsection{Sensitivity Analysis}
-Preliminary results were obtained through a sensitivity analysis (SA) employed to identify the most influential factors affecting concrete corrosion processes.
+\subsection{Sensitivity Analysis of concrete corrosion processes}
+SA have been employed to identify the most influential factors affecting concrete corrosion processes.
 SA is vital for the efficiency of a probabilistic risk assessment tool, as it enables the exclusion of variables with minimal impact on outcomes, thereby reducing the computational demands of the risk assessment framework.
 Sobol' indices are widely recognized as one of the most robust and reliable methods for global SA. 
 This is attributed to their rigorous theoretical foundation in variance-based decomposition, their ability to capture both linear and nonlinear dependencies—including high-order interactions among random variables—and their clear interpretability~\cite{Sobols_indices_SOBOL}.
 For these reasons Sobol' indices have been evaluated for both corrosion models to rank the effect of the random variables on the outputs. 
 
-\subsubsection{Carbonation-induced corrosion - SA}\label{SA_carbonation}
+\subsubsection{Carbonation-induced corrosion}\label{SA_carbonation}
 The random variables considered in the SA of the carbonation model are the same as those introduced in Sec.~\ref{ebn_chloride_section}. 
 While the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i} follow the same probability distribution across all decades and climatic projections, the distributions of \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int} vary depending on the decade and climate projection. \\ 
 Figure~\ref{Sobol_carb_2020ssp1} shows the Sobol' indices for the carbonation model during the first decade under the \textit{ssp1} climate scenario. 
@@ -34,7 +34,7 @@ The analysis confirms that relative humidity continues to exert the most signifi
     \caption{Sobol' indices of the model for carbonation induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_carb_2020uniform}
 \end{figure}
 
-\subsubsection{Carbonation-induced corrosion - SA}
+\subsubsection{Carbonation-induced corrosion}
 The same procedure presented in Sec.~\ref{SA_carbonation} have been applied to the chloride-induced corrosion model, obtaining the results presented in Fig.~\ref{Sobol_ch_2020ssp1} and Fig.~\ref{Sobol_ch_2020uniform}.
 \begin{figure}[H]
     \centering
@@ -51,9 +51,15 @@ For the chloride-induced corrosion model, relative humidity is identified as the
 
 \subsection{Exceedance Probabilities for Corrosion}
 
-The results of the sensitivity analysis motivated the introduction of two control nodes, \textit{DeH} and \textit{DeCh}, to regulate relative humidity and chloride concentration at the system boundaries. These nodes are defined as follows. The node \textit{DeH} represents a dehumidifier unit, modelled as a root node with a failure probability of $10^{-4}$, and is parent to both the model nodes.
-Its influence is identical across the two models: when operational (i.e., not in a failed state) and when the relative humidity exceeds a specified threshold, it reduces the humidity to a defined target level. In the eBN described in Sec.~\ref{caseofstudy}, the threshold and target relative humidity values are set to 0.25 and 0.2, respectively.
-The node \textit{DeCh} is conceptually similar to \textit{DeH}. It is also a root node with a failure probability of $10^{-4}$ and is defined by a threshold and target value for chloride concentration. Unlike \textit{DeH}, \textit{DeCh} influences only the chloride-induced corrosion model, where it acts to reduce the chloride concentration at the system boundary when the threshold is exceeded. In the eBN presented in Sec.~\ref{caseofstudy}, the threshold and target chloride concentration values are 0.9 and 0.7, respectively.\\
+The results of the SA motivated the introduction of two control nodes, \textit{DeH} and \textit{DeCh}, to regulate relative humidity and chloride concentration at the system boundaries. 
+These nodes are defined as follows.
+The node \textit{DeH} represents a dehumidifier unit, modelled as a root node with a failure probability of $10^{-4}$, and is parent to both the model nodes.
+Its influence is identical across the two models: when operational (i.e., not in a failed state) and when the relative humidity exceeds a specified threshold, it reduces the humidity to a defined target level. 
+In the eBN described in Sec.~\ref{caseofstudy}, the threshold and target relative humidity values are set to 0.25 and 0.2, respectively.
+The node \textit{DeCh} is conceptually similar to \textit{DeH}.
+It is also a root node with a failure probability of $10^{-4}$ and is defined by a threshold and target value for chloride concentration. 
+Unlike \textit{DeH}, \textit{DeCh} influences only the chloride-induced corrosion model, where it acts to reduce the chloride concentration at the system boundary when the threshold is exceeded. 
+In the eBN presented in Sec.~\ref{caseofstudy}, the threshold and target chloride concentration values are 0.9 and 0.7, respectively.\\
 
 \subsubsection{Precise eBN}
 Exceedance probabilities for corrosion are contained in the CPTs of the two functional of the eBNs presented in Sec.\ref{caseofstudy}. 
@@ -242,7 +248,7 @@ The CPT of the chloride induced corrosion node in the precise rBN depicted in Fi
 
 \subsubsection{Imprecise eBN}
 Results for the imprecise eBN depicted in Fig.~\ref{fig:imprecise_ebn} are obtained through standard Double Loop simulation with an inner Monte Carlo simulation with $10^3$ samples. Performance functions of the two corrosion model nodes are defined in the same way as for the precise ebn.
-The CPT of the carbonation node in the imprecise rBN depicted in Fig.\ref{fig:imprecise_rbn} still has 54 possible scenarios, still never reaches the failure threshold whenever the dehumidifier unit is working the carbonation process and for all the decades before year 2050. Failure probability interval  after year 2060 are shown in table Tab.~\ref{Carbonation_imprecise_cpt}.
+The CPT of the carbonation node in the imprecise rBN depicted in Fig.\ref{fig:imprecise_rbn} still has 54 possible scenarios, still never reaches the failure threshold whenever the dehumidifier unit is working the carbonation process and for all the decades before year 2050. Failure probability interval  after year 2050 are shown in table Tab.~\ref{Carbonation_imprecise_cpt}.
 
 \begin{table}[H]
     \begin{center}
@@ -382,22 +388,22 @@ As for the precise BN, the CPT of the chloride induced corrosion node in the pre
 \end{table}
 
 \subsubsection{Results comparison}
-In this section results regarding the probability of failure for the two nodes related to carbonation-induced and chloride-induced corrosion, and coming from the precise and the imprecise eBN are compared. 
+In this section results regarding the thresholds exceedance probability for the two nodes related to carbonation-induced and chloride-induced corrosion, and coming from the precise and the imprecise eBN are compared. 
 In particular, as expected is possible to see that in all the analysed cases of Fig.~\ref{comparizon_carb},~\ref{comparizon_ch_brokenbroken} and~\ref{comparizon_ch_brokenworking}, failure probability intervals always contain the crisp failure probability values coming from the precise eBN.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/22_carbonation_comparizon_broken.pdf}
-    \caption{Failure probabilities comparison between precise and imprecise eBN for carbonation node and scenarios when the \textit{DeH} is broken}\label{comparizon_carb}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for carbonation node and scenarios when the \textit{DeH} is broken}\label{comparizon_carb}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/20_Chloride_comparizon_brokenbroken.pdf}
-    \caption{Failure probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when both \textit{DeH} and \textit{DeCh} are broken}\label{comparizon_ch_brokenbroken}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when both \textit{DeH} and \textit{DeCh} are broken}\label{comparizon_ch_brokenbroken}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/21_Chloride_comparizon_workingbroken.pdf}
-    \caption{Failure probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when \textit{DeH} is working and \textit{DeCh} is broken}\label{comparizon_ch_brokenworking}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when \textit{DeH} is working and \textit{DeCh} is broken}\label{comparizon_ch_brokenworking}
 \end{figure}
