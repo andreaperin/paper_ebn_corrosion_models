@@ -7,7 +7,7 @@
 \usepackage[english]{babel}
 % \usepackage{fontspec}
 \usepackage{siunitx}
-\usepackage{microtype}
+% \usepackage{microtype}
 \usepackage{underscore} % Allows underscores in text and better handling
 \usepackage[T1]{fontenc}
 \usepackage{lineno,hyperref}
@@ -27,6 +27,11 @@
 \usepackage{array}
 \usepackage{makecell}
 \usepackage{caption}
+
+% Zio's formatting
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{tikz}
 
 
 \usepackage[
@@ -63,10 +68,31 @@
 
 \date{\today}
 
+% Double line spacing from here on
+\AtBeginDocument{\doublespacing}
+
+\fancypagestyle{firstpagefooter}{
+  \fancyhf{}
+  \fancyfoot[L]{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=south west, fill=gray!10, draw=black, rounded corners=2pt, inner sep=4pt]
+      at ([xshift=1cm,yshift=1.5cm]current page.south west) {%
+        \begin{tabular}{l}
+            Name: Andrea Perin \\
+            Date: \today \\
+            Name: andrea.perin@irz.uni-hannover.de \\
+        \end{tabular}
+      };
+    \end{tikzpicture}
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
 \begin{document}
 
 \maketitle
-
+\thispagestyle{firstpagefooter}
 
 \begin{abstract}\label{abstract}
     \input{sections/abstract.tex}
