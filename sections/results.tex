@@ -5,55 +5,55 @@
 %chktex-file 8
 %chktex-file 25
 
-This section presents a comprehensive discussion of the results obtained from the application of the eBN framework in addressing uncertainties associated with concrete corrosion risk, with a particular focus on imprecise data arising from climate change projections. Before delving into these findings, we first summarize the outcomes of the sensitivity analysis (SA) conducted on carbonation-induced and chloride-induced corrosion processes.
+This section presents a comprehensive discussion of the results obtained from the application of the eBN framework addressing the relevant uncertainties in the concrete corrosion, with a particular focus on imprecise data arising from climate change projections. Before delving into these findings, we first summarize the outcomes of the sensitivity analysis (SA) performed on the carbonation-induced and chloride-induced corrosion processes.
 
 \subsection{Sensitivity Analysis of concrete corrosion processes}
-SA have been employed to identify the most influential factors affecting concrete corrosion processes.
-SA is vital for the efficiency of a probabilistic risk assessment tool, as it enables the exclusion of variables with minimal impact on outcomes, thereby reducing the computational demands of the risk assessment framework.
-Sobol' indices are widely recognized as one of the most robust and reliable methods for global SA. 
-This is attributed to their rigorous theoretical foundation in variance-based decomposition, their ability to capture both linear and nonlinear dependencies—including high-order interactions among random variables—and their clear interpretability~\cite{Sobols_indices_SOBOL}.
-For these reasons Sobol' indices have been evaluated for both corrosion models to rank the effect of the random variables on the outputs. 
+SA has been perfomed to identify the most influential factors affecting concrete corrosion processes.
+% SA is vital for the efficiency of a probabilistic risk assessment tool, as it enables the exclusion of variables with minimal impact on outcomes, thereby reducing the computational demands of the risk assessment framework.
+Sobol' indices are used and reliable indices for global SA.0 
+This choice is justified because of their rigorous theoretical foundation in variance-based decomposition, the ability to capture both linear and nonlinear dependencies, including high-order interactions among random variables and the clear interpretability~\cite{Sobols_indices_SOBOL}.
+Sobol' indices have been evaluated for both corrosion models to rank the effect of the random variables on the outputs. 
 
 \subsubsection{Carbonation-induced corrosion}\label{SA_carbonation}
 The random variables considered in the SA of the carbonation model are the same as those introduced in Sec.~\ref{ebn_chloride_section}. 
-While the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i} follow the same probability distribution across all decades and climatic projections, the distributions of \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int} vary depending on the decade and climate projection. \\ 
+The variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc} and \textit{D\_i} follow the same probability distribution across all decades and climatic projections, whereas the distributions of \textit{T}, \textit{ppm\_CO\textsubscript{2}} and \textit{RH\_int} vary depending on the decade and climate projection. \\ 
 Figure~\ref{Sobol_carb_2020ssp1} shows the Sobol' indices for the carbonation model during the first decade under the \textit{ssp1} climate scenario. 
-Both the first-order and total-effect Sobol' indices are negligible for all input variables except for relative humidity, indicating that \textit{RH\_int} is the only variable that significantly contributes to the output variance—both independently (first-order effect) and through interactions with other variables (total effect).
+Both the first-order and total-effect Sobol' indices are negligible for all input variables except for relative humidity, indicating that \textit{RH\_int} is the only variable that significantly contributes to the output variance, both independently (first-order effect) and through interactions with other variables (total effect).
 Sobol' indices have been computed for each decade and for all considered climate projections. The results consistently exhibit the same trend as illustrated for the first-decade and \textit{ssp1} projection, with relative humidity remaining the dominant factor influencing output variance. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
-    \caption{Sobol' indices of the model for carbonation induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_carb_2020ssp1}
+    \caption{Sobol' indices of the model for carbonation-induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_carb_2020ssp1}
 \end{figure}
 In Fig.~\ref{Sobol_carb_2020uniform}, Sobol' indices are presented under the assumption that all input variables follow uniform probability distributions. For the variables \textit{Ce}, \textit{Ca}, \textit{k\_site}, \textit{n\_d}, \textit{n\_m}, \textit{E}, \textit{ratio\_wc}, and \textit{D\_i}, the uniform distribution bounds were defined as the minimum and maximum values obtained from $10^4$ samples drawn from their respective original distributions. For the time-dependent variables \textit{T}, \textit{ppm\_CO\textsubscript{2}}, and \textit{RH\_int}, the uniform bounds for each decade were derived from the minimum and maximum of a merged set of $3 \times 10^4$ samples, aggregated across all climate change projections. This approach is adopted to enhance the potential influence of the distribution tails, particularly those of the original Gaussian distributions, thereby allowing a more comprehensive assessment of the input variables' impact on model output variability. 
 The analysis confirms that relative humidity continues to exert the most significant influence on the variability of the model output, even under the assumption of uniformly distributed inputs.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/carbonation/17_sobols_2020_ssp1.pdf}
-    \caption{Sobol' indices of the model for carbonation induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_carb_2020uniform}
+    \caption{Sobol' indices of the model for carbonation-induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_carb_2020uniform}
 \end{figure}
 
 \subsubsection{Carbonation-induced corrosion}
-The same procedure presented in Sec.~\ref{SA_carbonation} have been applied to the chloride-induced corrosion model, obtaining the results presented in Fig.~\ref{Sobol_ch_2020ssp1} and Fig.~\ref{Sobol_ch_2020uniform}.
+The same procedure presented in Sec.~\ref{SA_carbonation} has been applied to the chloride-induced corrosion model, obtaining the results presented in Fig.~\ref{Sobol_ch_2020ssp1} and Fig.~\ref{Sobol_ch_2020uniform}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/chloride/19_sobols_withRH_2020_ssp1.pdf}
-    \caption{Sobol' indices of the model for chloride induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_ch_2020ssp1}
+    \caption{Sobol' indices of the model for chloride-induced corrosion considering the random variables identified by the year 2020 and the projection \textit{ssp1}}\label{Sobol_ch_2020ssp1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/sobols_indices/chloride/18_sobols_withRH_uniform_2020.pdf}
-    \caption{Sobol' indices of the model for chloride induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_ch_2020uniform}
+    \caption{Sobol' indices of the model for chloride-induced corrosion at year 2020 under the uniform distributions assumption}\label{Sobol_ch_2020uniform}
 \end{figure}
-For the chloride-induced corrosion model, relative humidity is identified as the primary driver of output variability in both distributional scenarios. However, under the uniform input assumption, additional factors such as temperature, the curing factor, and the environmental factor also exhibit a non-negligible influence on the output variance.
+For the chloride-induced corrosion model, relative humidity is identified as the primary driver of output variability in both distributional scenarios. However, under the uniform input assumption, additional factors such as temperature, the curing factor and the environmental factor also exhibit a non-negligible influence on the output variance.
 
 \subsection{Exceedance Probabilities for Corrosion}
 
 The results of the SA motivated the introduction of two control nodes, \textit{DeH} and \textit{DeCh}, to regulate relative humidity and chloride concentration at the system boundaries. 
 These nodes are defined as follows.
-The node \textit{DeH} represents a dehumidifier unit, modelled as a root node with a failure probability of $10^{-4}$, and is parent to both the model nodes.
+The node \textit{DeH} represents a dehumidifier unit, modelled as a root node with a failure probability of $10^{-4}$ and is parent to both the model nodes.
 Its influence is identical across the two models: when operational (i.e., not in a failed state) and when the relative humidity exceeds a specified threshold, it reduces the humidity to a defined target level. 
 In the eBN described in Sec.~\ref{caseofstudy}, the threshold and target relative humidity values are set to 0.25 and 0.2, respectively.
 The node \textit{DeCh} is conceptually similar to \textit{DeH}.
@@ -63,12 +63,12 @@ In the eBN presented in Sec.~\ref{caseofstudy}, the threshold and target chlorid
 
 \subsubsection{Precise eBN}
 Exceedance probabilities for corrosion are contained in the CPTs of the two functional of the eBNs presented in Sec.\ref{caseofstudy}. 
-Results for the precise eBN depicted in Fig.~\ref{fig:precise_ebn} are obtained through Monte Carlo simulation with $10^4$ samples and considering a maximum allowed carbonation depth of \SI{3}{\centi\meter} and a maximum allowed chloride penetration of \SI{12}{\centi\meter}, where the chloride penetration is defined as depth where chloride concentration is bigger than \SI{0.9}{\kilogram\per\cubic\meter}, for defining the performance functions of nodes \textit{carb_depth} and \textit{ch_corr_depth}.
-In particular the CPT of the carbonation node in the precise rBN depicted in Fig.\ref{fig:precise_rbn} has 54 possible scenarios, identified by 9 decades, 3 projections and 2 possible states of the dehumidifier unit. This CPT shows that whenever the dehumidifier unit is working the carbonation process never reaches the failure threshold, for all the decades before year 2060 the failure never happen, and after year 2060 failure of the system can take place with the probabilities shown in table Tab.~\ref{Carbonation_precise_cpt}.
+Results for the precise eBN depicted in Fig.~\ref{fig:precise_ebn} are obtained through Monte Carlo simulation with $10^4$ samples and considering a maximum allowed carbonation depth of \SI{3}{\centi\meter} and a maximum allowed chloride penetration of \SI{12}{\centi\meter}, where the chloride penetration is defined as depth when chloride concentration is larger than \SI{0.9}{\kilogram\per\cubic\meter}, for defining the performance functions of nodes \textit{carb_depth} and \textit{ch_corr_depth}.
+In particular the CPT of the carbonation node in the precise rBN depicted in Fig.\ref{fig:precise_rbn} has 54 possible scenarios, identified by 9 decades, 3 projections and 2 possible states of the dehumidifier unit. This CPT shows that whenever the dehumidifier unit is working the carbonation process never reaches the failure threshold, for all the decades before year 2060 the failure never occurs, and after year 2060 failure of the system can take place with the probabilities shown in Tab.~\ref{Carbonation_precise_cpt}.
 
 \begin{table}[H]
     \begin{center}
-    \caption{Carbonation induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Carbonation_precise_cpt}
+    \caption{Carbonation-induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Carbonation_precise_cpt}
         \begin{tabular}{P{6cm}P{4cm}}
             \toprule
             \textbf{scenarios} & \textbf{states probabilities} \\
@@ -115,11 +115,13 @@ In particular the CPT of the carbonation node in the precise rBN depicted in Fig
     \end{center}
 \end{table}
 
-The CPT of the chloride induced corrosion node in the precise rBN depicted in Fig.\ref{fig:precise_rbn} has 108 possible scenarios, identified by 9 decades, 3 projections, 2 possible states of the dehumidifier unit and 2 possible states for node \textit{DeCh}. This CPT shows that whenever the unit to reduce the chloride concentration at system boundary is working the chloride induced corrosion process never reaches the failure threshold. Some of the remaining scenarios are shown in table Tab.~\ref{Chloride_precise_cpt}.
+The CPT of the chloride-induced corrosion node in the precise rBN depicted in Fig.\ref{fig:precise_rbn} has 108 possible scenarios, identified by 9 decades, 3 projections, 2 possible states of the dehumidifier unit and 2 possible states for node \textit{DeCh}. 
+This CPT shows that whenever the unit to reduce the chloride concentration at system boundary is working, the chloride-induced corrosion process never reaches the failure threshold. 
+Some of the remaining scenarios are shown in Tab.~\ref{Chloride_precise_cpt}.
 
 \begin{table}[H]
     \begin{center}
-    \caption{Carbonation induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Chloride_precise_cpt}
+    \caption{Carbonation-induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Chloride_precise_cpt}
         \begin{tabular}{P{7cm}P{4cm}}
             \toprule
             \textbf{scenarios} & \textbf{states probabilities} \\
@@ -247,12 +249,13 @@ The CPT of the chloride induced corrosion node in the precise rBN depicted in Fi
 \end{table}
 
 \subsubsection{Imprecise eBN}
-Results for the imprecise eBN depicted in Fig.~\ref{fig:imprecise_ebn} are obtained through standard Double Loop simulation with an inner Monte Carlo simulation with $10^3$ samples. Performance functions of the two corrosion model nodes are defined in the same way as for the precise ebn.
-The CPT of the carbonation node in the imprecise rBN depicted in Fig.\ref{fig:imprecise_rbn} still has 54 possible scenarios, still never reaches the failure threshold whenever the dehumidifier unit is working the carbonation process and for all the decades before year 2050. Failure probability interval  after year 2050 are shown in table Tab.~\ref{Carbonation_imprecise_cpt}.
+Results for the imprecise eBN depicted in Fig.~\ref{fig:imprecise_ebn} are obtained through standard Double Loop simulation with an inner Monte Carlo simulation with $10^3$ samples. 
+Performance functions of the two corrosion model nodes are defined in the same way as for the precise eBN.
+The CPT of the carbonation node in the imprecise rBN depicted in Fig.\ref{fig:imprecise_rbn} still has 54 possible scenarios, still never reaches the failure threshold whenever the dehumidifier unit is working the carbonation process and for all the decades before year 2050. Failure probability intervals after year 2050 are shown in table Tab.~\ref{Carbonation_imprecise_cpt}.
 
 \begin{table}[H]
     \begin{center}
-    \caption{Carbonation induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Carbonation_imprecise_cpt}
+    \caption{Carbonation-induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Carbonation_imprecise_cpt}
         \begin{tabular}{P{5cm}P{6cm}}
             \toprule
             \textbf{scenarios} & \textbf{states probabilities} \\
@@ -305,10 +308,11 @@ The CPT of the carbonation node in the imprecise rBN depicted in Fig.\ref{fig:im
     \end{center}
 \end{table}
 
-As for the precise BN, the CPT of the chloride induced corrosion node in the precise rBN depicted in Fig.\ref{fig:imprecise_rbn} has 108 possible scenarios and whenever the unit to reduce the chloride concentration at system boundary is working the chloride induced corrosion process never reaches the failure threshold. Some of the remaining scenarios are shown in table Tab.~\ref{Chloride_imprecise_cpt}.
+As for the precise BN, the CPT of the chloride-induced corrosion node in the precise rBN depicted in Fig.\ref{fig:imprecise_rbn} has 108 possible scenarios and whenever the unit to reduce the chloride concentration at system boundary is working, the chloride-induced corrosion process never reaches the failure threshold. 
+Some of the remaining scenarios are shown in Tab.~\ref{Chloride_imprecise_cpt}.
 \begin{table}[H]
     \begin{center}
-    \caption{Carbonation induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Chloride_imprecise_cpt}
+    \caption{Carbonation-induced corrosion node partial CPT for the precise eBN of Fig.~\ref{carbonation_ebn}}\label{Chloride_imprecise_cpt}
         \begin{tabular}{P{5.2cm}P{6cm}}
             \toprule
             \textbf{scenarios} & \textbf{states probabilities} \\
@@ -388,22 +392,22 @@ As for the precise BN, the CPT of the chloride induced corrosion node in the pre
 \end{table}
 
 \subsubsection{Results comparison}
-In this section results regarding the thresholds exceedance probability for the two nodes related to carbonation-induced and chloride-induced corrosion, and coming from the precise and the imprecise eBN are compared. 
-In particular, as expected is possible to see that in all the analysed cases of Fig.~\ref{comparizon_carb},~\ref{comparizon_ch_brokenbroken} and~\ref{comparizon_ch_brokenworking}, failure probability intervals always contain the crisp failure probability values coming from the precise eBN.
+In this section, results regarding the threshold exceedance probability for the two nodes related to carbonation-induced and chloride-induced corrosion, and coming from the precise and the imprecise eBN are compared. 
+In particular, as expected, it is possible to see that in all the analysed cases of Figs.~\ref{comparizon_carb},~\ref{comparizon_ch_brokenbroken} and~\ref{comparizon_ch_brokenworking}, failure probability intervals always contain the crisp failure probability values coming from the precise eBN.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/22_carbonation_comparizon_broken.pdf}
-    \caption{Exceedance probabilities comparison between precise and imprecise eBN for carbonation node and scenarios when the \textit{DeH} is broken}\label{comparizon_carb}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for carbonation-induced corrosion node and scenarios when the \textit{DeH} is failed}\label{comparizon_carb}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/20_Chloride_comparizon_brokenbroken.pdf}
-    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when both \textit{DeH} and \textit{DeCh} are broken}\label{comparizon_ch_brokenbroken}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride-induced corrosion node and scenarios when both \textit{DeH} and \textit{DeCh} are failed}\label{comparizon_ch_brokenbroken}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{imgs/pdfs/21_Chloride_comparizon_workingbroken.pdf}
-    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride induced corrosion node and scenarios when \textit{DeH} is working and \textit{DeCh} is broken}\label{comparizon_ch_brokenworking}
+    \caption{Exceedance probabilities comparison between precise and imprecise eBN for chloride-induced corrosion node and scenarios when \textit{DeH} is working and \textit{DeCh} is failed}\label{comparizon_ch_brokenworking}
 \end{figure}
