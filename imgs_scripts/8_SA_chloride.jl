@@ -137,7 +137,7 @@ for (i, year) in enumerate(slices)
     for (j, proj) in enumerate([:ssp1, :ssp2, :ssp5])
         T = RandomVariable(truncated(Normal(means_T[proj][i], means_T[proj][i] * COV_T[proj][i]), 0, Inf), :T)
         RH_int = RandomVariable(truncated(Normal(means_H[proj][i], means_H[proj][i] * COV_H[proj][i]), 0, Inf), :RH_int)
-        inputs = [R, t, T, RH_int, E, C_Ch_B, D_Ch0, ke, kt, kc]
+        inputs = [R, t, T, RH_int, E, C_Ch_B, D_Ch_0, ke, kt, kc]
         models = models_ch
         # df = sample(inputs, 100)
         # UncertaintyQuantification.evaluate!(models, df)
@@ -165,7 +165,7 @@ for (i, year) in enumerate(slices)
                 ymax = 1,
                 height = "8cm",  # Optional: can tweak height/width
                 width = "15cm",
-                title = L"Sobols \ Indices ",
+                title = L"Sobol's \ Indices ",
                 grid = "major"
             },
             # Group 1: shifted left
@@ -174,7 +174,7 @@ for (i, year) in enumerate(slices)
             Plot({fill = "red", bar_shift = "$(bar_shift_amt)cm"}, Coordinates([(i, group2_values[i]) for i in 1:n])),
             Legend(["First Order", "Total Effect"])
         )
-        PGFPlotsX.save("imgs/pdfs/sobols_indices/chloride/19_sobols_withRH_$(year)_$(proj).pdf", pgf)
+        PGFPlotsX.save("imgs/pdfs/sobols_indices/chloride/19_1_sobols_withRH_$(year)_$(proj).pdf", pgf)
     end
 end
 
@@ -235,7 +235,7 @@ for year in slices
             ylabel = "",
             height = "8cm",  # Optional: can tweak height/width
             width = "15cm",
-            title = L"Sobols \ Indices \ - \ Uniform \ Assumption ",
+            title = L"Sobol's \ Indices \ - \ Uniform \ Assumption ",
             grid = "major"
         },
 
@@ -245,5 +245,5 @@ for year in slices
         Plot({fill = "red", bar_shift = "$(bar_shift_amt)cm"}, Coordinates([(i, group2_values[i]) for i in 1:n])),
         Legend(["First Order", "Total Effect"])
     )
-    PGFPlotsX.save("imgs/pdfs/sobols_indices/chloride/18_sobols_withRH_uniform_$(year).pdf", pgf)
+    PGFPlotsX.save("imgs/pdfs/sobols_indices/chloride/18_1_sobols_withRH_uniform_$(year).pdf", pgf)
 end
