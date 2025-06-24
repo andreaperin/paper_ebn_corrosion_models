@@ -5,7 +5,7 @@
 %chktex-file 8
 %chktex-file 25
 
-Concrete degradation is a risk factor to account for the long-term performance assessment of radioactive waste disposals, considering their environmental exposure. Over time, degradation processes such as carbonation can lower the alkalinity of concrete, which is essential for protecting the steel reinforcements within these structures from corrosion.
+Concrete degradation is a risk factor to account for in the long-term performance assessment of radioactive waste disposals, considering their environmental exposure. Over time, degradation processes such as carbonation can lower the alkalinity of concrete, which is essential for protecting the steel reinforcements within these structures from corrosion.
 The onset of corrosion can compromise the integrity of containment walls, potentially leading to breaches that could release radioactive contaminants into the environment, and ultimately dose intake.
 Properly accounting for these degradation pathways in the performance assessment of radioactive waste repositories over climatic projections is essential for ensuring the containment's longevity and, hence, the protection of public health and the environment. By implementing an eBN, chemical degradation of concrete structures is here evaluated over climatic change projections. 
 
@@ -13,7 +13,7 @@ Properly accounting for these degradation pathways in the performance assessment
 Two most critical degradation processes impacting concrete infrastructure in radioactive waste disposals are carbonation-induced corrosion and chloride-induced corrosion. This section provides a concise overview of both phenomena and presents their respective mathematical models.
 
 \subsubsection{Carbonation-induced corrosion}\label{Carbonation_corrosion_Chpt}
-The abundance of $CO_2$ increases the risk of carbonation-induced corrosion in concrete structures~\cite{TALUKDAR_part1,TALUKDAR_part2}. 
+The presence of $CO_2$ increases the risk of carbonation-induced corrosion in concrete structures~\cite{TALUKDAR_part1,TALUKDAR_part2}. 
 The interaction between concrete and atmospheric $CO_2$ causes the formation of calcium carbonate, a process known as carbonation, which reduces the concrete's alkalinity and makes the steel reinforcement in the concrete susceptible to corrosion~\cite{GLASSER2008226}.
 Carbonation is quantified by measuring the depth from the concrete surface to where the alkalinity reaches a minimum allowable value. 
 Once carbonation reaches the steel reinforcements, the corrosion propagation phase begins, accelerating the degradation of the concrete structure.
@@ -187,7 +187,7 @@ In this way, it is possible to obtain the two CPTs associated with the two discr
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{imgs/pdfs/13_total_rbn_precise.pdf}
-    \caption{Concrete corrosion risk rBN with precise nodes}\label{fig:precise_rbn}
+    \caption{Concrete corrosion rBN with precise nodes}\label{fig:precise_rbn}
 \end{figure}
 
 In this BN, only discrete nodes are present. Both \textit{ch\_corr\_depth} and \textit{carb\_depth} have as parents the discrete nodes referred to the specific time slice, to the specific climatic projection and the auxiliary discrete node \textit{deH}. The node \textit{deCh} influences the sole node chloride-induced corrosion process, therefore it is not a parent of \textit{carb\_depth}.
