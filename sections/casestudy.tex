@@ -5,7 +5,7 @@
 %chktex-file 8
 %chktex-file 25
 
-Concrete degradation is a risk factor to account for in the long-term performance assessment of radioactive waste disposals, considering their environmental exposure. Over time, degradation processes such as carbonation can lower the alkalinity of concrete, which is essential for protecting the steel reinforcements within these structures from corrosion.
+Concrete degradation is a factor to account for in the long-term performance assessment of radioactive waste disposals, considering their environmental exposure. Over time, degradation processes such as carbonation can lower the alkalinity of concrete, which is essential for protecting from corrosion the steel reinforcements within these structures.
 The onset of corrosion can compromise the integrity of containment walls, potentially leading to breaches that could release radioactive contaminants into the environment, and ultimately dose intake.
 Properly accounting for these degradation pathways in the performance assessment of radioactive waste repositories over climatic projections is essential for ensuring the containment's longevity and, hence, the protection of public health and the environment. By implementing an eBN, chemical degradation of concrete structures is here evaluated over climatic change projections. 
 
@@ -73,11 +73,11 @@ Similar to carbonation, there are two time-dependent quantities that account for
 The temperature effect is consistent with that defined for carbonation in Eq.\ref{3:ft}, thus $f_T^C = f_T^{Cl}$. The effect of RH is expressed in the work of~\textcite{f_RH_ClELHASSAN} as shown in Eq.\ref{eq_f_rh_cl}.
 
 \subsection{eBN for concrete degradation}
-The eBN framework is exemplified to perform the analysis of concrete degradation over climatic change projections. 
+The eBN framework is exemplified to perform the analysis of concrete degradation considering climatic change projections. 
 Climate change data are taken from the catalogue provided in~\textcite{Copernicus_Climate_Change} and include three main projection scenarios referred to three different Shared Socio-economic Pathways, namely \textit{ssp1}, \textit{ssp2} and \textit{ssp5}. 
 These projections account for variations in temperature, $CO_2$ concentration and relative humidity from 2020 to 2100, relevant for concrete corrosion models.\\ 
-In this study, the eBN integrates the two degradation models presented in~\ref{Carbonation_corrosion_Chpt} and in~\ref{Chloride_corrosion_Chpt}, and is structured to capture the probabilistic dependencies considering epistemic and aleatoric uncertainties, between climate conditions of temperature, relative humidity and $CO_2$ concentration, material properties, e.g.~diffusion coefficients, water-to-cement ratio and the final state of the system, through the carbonation and chloride effects on concrete.
-The following sections detail the eBN structure, the probabilistic modelling of input variables and its application to the case study of a radioactive waste disposal concrete structures degradation. 
+In this study, the eBN integrates the two degradation models presented in~\ref{Carbonation_corrosion_Chpt} and in~\ref{Chloride_corrosion_Chpt}, and is structured to capture the probabilistic dependencies, considering epistemic and aleatoric uncertainties, between climate conditions of temperature, relative humidity and $CO_2$ concentration, material properties, e.g.~diffusion coefficients, water-to-cement ratio and the final state of the system, through the carbonation and chloride effects on concrete.
+The following sections detail the eBN structure, the probabilistic modelling of the input variables and its application to the case study of concrete structures degradation in a radioactive waste disposal. 
 Initially, the carbonation-induced and chloride-induced corrosion models are examined separately to enhance clarity and comprehensibility. 
 Subsequently, the complete eBN framework, integrating both degradation mechanisms, is presented.
 
