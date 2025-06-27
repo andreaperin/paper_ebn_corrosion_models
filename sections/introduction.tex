@@ -2,9 +2,9 @@
 %chktex-file 9
 %chktex-file 10
 
-Concrete is a most fundamental material for buildings, bridges, tunnels and other structures with safety-critical containment functions like in nuclear power plants and radioactive waste disposals.
+Concrete is a fundamental material for buildings, bridges, tunnels and other structures with safety-critical containment functions like those employed in nuclear power plants and radioactive waste disposals.
 This is because of its proven strength, durability and cost-effectiveness.
-However, environmental exposure can accelerate its degradation~\cite{GLASSER2008226}. For example, structures located in coastal or urban areas, where humidity, chlorides, and fluctuating temperatures accelerate deterioration, are especially prone to corrosion-related process~\cite{qu2021durability}.
+However, environmental exposure can accelerate its degradation~\cite{GLASSER2008226}. For example, structures located in coastal or urban areas, where humidity, chlorides and fluctuating temperatures accelerate deterioration, are especially prone to corrosion-related processes~\cite{qu2021durability}.
 One such process is carbonation, where atmospheric carbon dioxide ($CO_2$) reacts with calcium compounds by forming calcium carbonate, challenging the reinforced concrete structures through the reduction of the alkalinity of the concrete, that is, lowering the PH, which compromises the protective layer surrounding the embedded steel reinforcement.
 As carbonation progresses and pH decreases, this protective layer breaks down, leaving steel vulnerable to corrosion~\cite{carbonation}.
 This degradation can lead to cracks, cracking, and weakening of the bond between the steel and concrete, ultimately diminishing the structural durability.
@@ -16,30 +16,30 @@ To maintain structural integrity over such long service lifes, the risk assessme
 
 Traditional risk assessment tools, such as Event Trees (ET)~\cite{papazoglou_mathematical_1998} and Fault Trees (FT)~\cite{kabir_overview_2017}, are the most widely used for the risk assessment of nuclear power plants and radioactive waste disposals.
 However, they are inherently limited by Boolean logic and the treatment of dependencies.
-Bayesian Networks (BNs), which model system dependencies through directed acyclic graphs~\cite{mahadevan2001bayesian} can also account for the uncertainties due to imperfect knowledge on system behaviour, include common cause failures, and consider multistate events. \\
+Bayesian Networks (BNs), which model system dependencies through directed acyclic graphs~\cite{mahadevan2001bayesian} can also account for the uncertainties due to imperfect knowledge on system behaviour, include common cause failures and consider multistate events. \\
 A BN enables diagnostic problem-solving while preserving the multi-scenario analysis and minimal cut-set identification features inherent to FT analysis.
-Since risk assessment often involves conditional probabilities, BNs provide an efficient factorization of joint probability distributions, making them particularly useful for reliability analysis, as shown by the work of~\textcite{langseth_bayesian_2007}.
-BNs have been used in several applications, including maintenance planning of structural components~\cite{morato2022optimal}, multi-hazard fragility assessment of bridges~\cite{gehl2016development, barros2024gaussian}, disaggregation of structural failure~\cite{yazdani2020bayesian}, deterioration processes in engineering structures~\cite{luque2019risk,lee2023dynamic,tran2020dynamic}, and especially the reliability assessment of reinforced concrete structures~\cite{hackl2016reliability,hosseini2024dynamic,guo2024mixed}.\\
+Since risk assessment often involves conditional probabilities, BNs provide an efficient factorization of joint probability distributions, making them particularly useful for reliability analysis, for example as shown by the work of~\textcite{langseth_bayesian_2007}.
+BNs have been used in several applications, including maintenance planning of structural components~\cite{morato2022optimal}, multi-hazard fragility assessment of bridges~\cite{gehl2016development, barros2024gaussian}, disaggregation of structural failure~\cite{yazdani2020bayesian}, deterioration processes in engineering structures~\cite{luque2019risk,lee2023dynamic,tran2020dynamic}, and especially reliability assessment of reinforced concrete structures~\cite{hackl2016reliability,hosseini2024dynamic,guo2024mixed}.\\
 Despite their advantages, conventional BNs are limited in their ability to model aleatoric uncertainties, as they primarily rely on expert knowledge and discrete probability assignments.
-Given that the uncertainties in corrosion dynamics are strongly influenced by $CO_2$ concentration, temperature, and relative humidity, it is essential to incorporate climate change projections.\\
+Given that the uncertainties in corrosion dynamics are strongly influenced by $CO_2$ concentration, temperature and relative humidity, it is important to incorporate climate change projections in the modelling.\\
 In this paper, we propose an enhanced Bayesian Network (eBN) with the incorporation of imprecise probabilities for handling both aleatoric and epistemic uncertainties.
 The eBN framework integrates structural reliability methods, such as First-Order Reliability Methods (FORM), and advanced Monte Carlo techniques into conventional BN structures. 
 The extension allows eBNs to: 
 \begin{enumerate*}[label=\roman*)]
   \item incorporate aleatoric uncertainties by introducing continuous nodes associated with probability distributions, significantly enhancing their applicability to risk assessment;
-  \item to combine the probabilistic reasoning capabilities with well-established reliability methods;
-  \item to adopt imprecise probabilities into the eBN framework, incorporating both epistemic and aleatoric uncertainties into the assessment process;
-  \item to model complex interactions between environmental variables and material properties over time.
+  \item combine the probabilistic reasoning capabilities with well-established reliability methods;
+  \item adopt imprecise probabilities into the eBN framework, incorporating both epistemic and aleatoric uncertainties into the assessment process;
+  \item model complex interactions between environmental variables and material properties over time.
 \end{enumerate*} 
 Thus, the eBN framework enables the embedding of climate change projections variables, e.g., $CO_2$ concentrations, temperature and humidity, into the corrosion process and allows a scenario-based evaluation of the impact of the environmental conditions over the chemical degradation of concrete in time.
 With the ability to assess climate change scenarios, eBNs offer an innovative framework, enabling the assessment of the resilience of concrete structures in the face of evolving environmental stressors, ultimately enabling risk-informed decision-making for adaptation and mitigation strategies.\\
 
-The eBN modelling framework is applied to the near-surface radioactive waste disposal located in Dessel, Belgium~\cite{tosoni_comprehensiveness_2019-1}.
+The proposed eBN modelling framework is applied to the near-surface radioactive waste disposal located in Dessel, Belgium~\cite{tosoni_comprehensiveness_2019-1}.
 Three climate change scenarios are considered, each corresponding to a distinct Shared Socioeconomic Pathway (\textit{ssp}) relevant to the region~\cite{CMIP6}.
 These projections are used to extrapolate the temporal evolution that influences the distribution of relevant parameters involved in carbonation-induced and chloride-induced corrosion processes.
 The primary objectives of this study are to: 
 \begin{enumerate*}[label=\roman*)]
-    \item  develop an eBN modelling framework tailored to the Dessel disposal that accounts for aleatoric uncertainties affecting structural integrity;
+    \item develop an eBN modelling framework tailored to the Dessel disposal that accounts for aleatoric uncertainties affecting structural integrity;
     \item quantify the impact of epistemic uncertainty associated with climate change projections; and
     \item support informed decision-making through a multi-scenario risk assessment.
 \end{enumerate*}
