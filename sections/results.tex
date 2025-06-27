@@ -7,12 +7,12 @@
 
 This section presents a comprehensive discussion of the results obtained from the application of the eBN framework, addressing the relevant uncertainties in the concrete corrosion process, with a particular focus on imprecise data arising from climate change projections. Before delving into these findings, we first summarize the outcomes of the sensitivity analysis (SA) performed on the carbonation-induced and chloride-induced corrosion processes.
 
-\subsection{Sensitivity Analysis of concrete corrosion processes}
+\subsection{Sensitivity Analysis of concrete corrosion process models}
 SA has been perfomed to identify the most influential factors affecting concrete corrosion processes.
 % SA is vital for the efficiency of a probabilistic risk assessment tool, as it enables the exclusion of variables with minimal impact on outcomes, thereby reducing the computational demands of the risk assessment framework.
 Sobol's indices are used as robust and reliable indicators for global SA. 
 This choice is justified because of their rigorous theoretical foundation in variance-based decomposition, the ability to capture both linear and nonlinear dependencies, including high-order interactions among random variables and the clear interpretability~\cite{Sobols_indices_SOBOL}.
-Sobol's indices have been evaluated for both corrosion models to rank the effect of the random variables on the outputs. 
+Sobol's indices have been evaluated for both corrosion models to rank the effect of the random variables on the respective outputs. 
 
 \subsubsection{Carbonation-induced corrosion}\label{SA_carbonation}
 The random variables considered in the SA of the carbonation model are the same as those introduced in Sec.~\ref{ebn_chloride_section}. 
@@ -63,7 +63,7 @@ In the eBN presented in Sec.~\ref{caseofstudy}, the threshold and target chlorid
 
 \subsubsection{Precise eBN}
 Exceedance probabilities for corrosion are contained in the CPTs of the two functional of the eBNs presented in Sec.\ref{caseofstudy}. 
-Results for the precise eBN depicted in Fig.~\ref{fig:precise_ebn} are obtained through Monte Carlo simulation with $10^4$ samples and considering a maximum allowed carbonation depth of \SI{3}{\centi\meter} and a maximum allowed chloride penetration of \SI{12}{\centi\meter}, where the chloride penetration is defined as depth when chloride concentration is larger than \SI{0.9}{\kilogram\per\cubic\meter}, for defining the performance functions of nodes \textit{carb_depth} and \textit{ch_corr_depth}.
+Results for the precise eBN depicted in Fig.~\ref{fig:precise_ebn} are obtained through Monte Carlo simulation with $10^4$ samples and considering a maximum allowed carbonation depth of \SI{3}{\centi\meter} and a maximum allowed chloride penetration of \SI{12}{\centi\meter}, where the chloride penetration is defined as the depth when chloride concentration is larger than \SI{0.9}{\kilogram\per\cubic\meter}, for defining the performance functions of nodes \textit{carb_depth} and \textit{ch_corr_depth}.
 In particular the CPT of the carbonation node in the precise rBN depicted in Fig.\ref{fig:precise_rbn} has 54 possible scenarios, identified by 9 decades, 3 projections and 2 possible states of the dehumidifier unit. This CPT shows that whenever the dehumidifier unit is working the carbonation process never reaches the failure threshold, for all the decades before year 2060 the failure never occurs, and after year 2060 failure of the system can take place with the probabilities shown in Tab.~\ref{Carbonation_precise_cpt}.
 
 \begin{table}[H]
