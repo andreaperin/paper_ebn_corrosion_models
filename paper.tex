@@ -32,6 +32,7 @@
 \usepackage{setspace}
 \usepackage{fancyhdr}
 \usepackage{tikz}
+\usepackage[a4paper,top=2cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
 
 
 \usepackage[
@@ -69,30 +70,30 @@
 \date{\today}
 
 % Double line spacing from here on
-\AtBeginDocument{\doublespacing}
+% \AtBeginDocument{\doublespacing}
 
-\fancypagestyle{firstpagefooter}{
-  \fancyhf{}
-  \fancyfoot[L]{%
-    \begin{tikzpicture}[remember picture, overlay]
-      \node[anchor=south west, fill=gray!10, draw=black, rounded corners=2pt, inner sep=4pt]
-      at ([xshift=1cm,yshift=1.5cm]current page.south west) {%
-        \begin{tabular}{l}
-            Name: Andrea Perin \\
-            Date: \today \\
-            Name: andrea.perin@irz.uni-hannover.de \\
-        \end{tabular}
-      };
-    \end{tikzpicture}
-  }
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0pt}
-}
+% \fancypagestyle{firstpagefooter}{
+%   \fancyhf{}
+%   \fancyfoot[L]{%
+%     \begin{tikzpicture}[remember picture, overlay]
+%       \node[anchor=south west, fill=gray!10, draw=black, rounded corners=2pt, inner sep=4pt]
+%       at ([xshift=1cm,yshift=1.5cm]current page.south west) {%
+%         \begin{tabular}{l}
+%             Name: Andrea Perin \\
+%             Date: \today \\
+%             Name: andrea.perin@irz.uni-hannover.de \\
+%         \end{tabular}
+%       };
+%     \end{tikzpicture}
+%   }
+%   \renewcommand{\headrulewidth}{0pt}
+%   \renewcommand{\footrulewidth}{0pt}
+% }
 
 \begin{document}
 
 \maketitle
-\thispagestyle{firstpagefooter}
+% \thispagestyle{firstpagefooter}
 
 \begin{abstract}\label{abstract}
     \input{sections/abstract.tex}
