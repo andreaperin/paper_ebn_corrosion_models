@@ -97,7 +97,7 @@ This feature enables BNs to provide accurate and efficient reasoning about uncer
 % However, in the case of the eBN framework, the application of exact-inference algorithms is not directly feasible due to the inclusion of continuous nodes.
 The continuous nature of these nodes complicates the inference process, as they introduce infinite possible states, making traditional exact-inference algorithms inapplicable.  
 To address this limitation, once the CPTs for all functional nodes are evaluated, a \textit{node elimination} algorithm, derived from graph theory~\cite{Shachter86a}, is employed. 
-This algorithm systematically removes the continuous nodes from the network, while preserving the acyclicity of the eBN at each step, as illustrated in Fig.~\ref{1_reduction_no_disc}. 
+This algorithm systematically removes the continuous nodes from the network while preserving the acyclicity of the eBN at each step,  transforming the network into its reduced form (rBN), as illustrated in Fig.~\ref{1_reduction_no_disc}. 
 By applying this algorithm, the eBN is reduced to a standard BN, which is referred to as the \textit{reduced} BN.\ This reduction allows for the use of well-established exact-inference algorithms for BNs, which enable both prognostic and diagnostic analysis. \\
 
 \begin{figure}[h]
