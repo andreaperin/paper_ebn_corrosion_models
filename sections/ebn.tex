@@ -219,10 +219,10 @@ An eBN that incorporates imprecise probabilities will be referred to as an impre
                 \begin{tabular}{P{2.5cm}P{1.5cm}P{1.5cm}}
                     \textbf{scenario} & \:d1 & \:d2 \\
                     \midrule
-                    \:a1 \:b1 & $(0.3;0.5)$ & $(0.5;0.7)$ \\
-                    \:a1 \:b2 & $(0.0;0.2)$ & $(0.8;1.0)$ \\
-                    \:a2 \:b1 & $(0.4;0.6)$ & $(0.4;0.6)$ \\
-                    \:a2 \:b2 & $(0.4;0.6)$ & $(0.4;0.6)$ \\
+                    \:a1 \:b1 & $[0.3;0.5]$ & $[0.5;0.7]$ \\
+                    \:a1 \:b2 & $[0.0;0.2]$ & $[0.8;1.0]$ \\
+                    \:a2 \:b1 & $[0.4;0.6]$ & $[0.4;0.6]$ \\
+                    \:a2 \:b2 & $[0.4;0.6]$ & $[0.4;0.6]$ \\
                 \end{tabular}
             \\
             \midrule
@@ -241,8 +241,8 @@ An eBN that incorporates imprecise probabilities will be referred to as an impre
         \begin{tabular}{P{2cm}P{2cm}P{2cm}}
             \textbf{scenarios} & \textbf{$M fail$} & \textbf{$M safe$} \\
             \midrule
-            $d1$ & $(0.02;0.6)$ & $(0.4;0.98)$ \\
-            $d2$ & $(0.12;0.76)$ & $(0.24;0.88)$ \\
+            $d1$ & $[0.02;0.6]$ & $[0.4;0.98]$ \\
+            $d2$ & $[0.12;0.76]$ & $[0.24;0.88]$ \\
         \end{tabular}
     \end{center}
 \end{table}
@@ -272,9 +272,9 @@ This approach allows for a more flexible and accurate analysis of systems where 
             \toprule
             \textbf{states} & \textbf{P} \\
             \midrule
-            s1 & $(0.05;0.1)$ \\
-            s2 & $(0.1;0.2)$ \\
-            s3 & $(0.8;0.9)$ \\
+            s1 & $[0.05;0.1]$ \\
+            s2 & $[0.1;0.2]$ \\
+            s3 & $[0.8;0.9]$ \\
           \end{tabular}
         \captionof{table}{CPT of a discrete imprecise node $S$ with 3 states $s1$, $s2$ and $s3$}\label{3_cpt_extremepoints}
     \end{minipage}
@@ -292,10 +292,10 @@ Consequently, solving the inference problem for the reduced CN (rCN) of an impre
         \begin{tabular}{P{1.5cm}P{4cm}}
             \textbf{Query} & \textbf{$P(Query | M = M fail)$} \\
             \midrule
-            $A = a1$ & $(0.281, 0.673)$ \\
-            $A = a2$ & $(0.327, 0.719)$ \\
-            $B = b1$ & $(0.205, 0.435)$ \\
-            $B = b2$ & $(0.565, 0.795)$ \\
+            $A = a1$ & $[0.281, 0.673]$ \\
+            $A = a2$ & $[0.327, 0.719]$ \\
+            $B = b1$ & $[0.205, 0.435]$ \\
+            $B = b2$ & $[0.565, 0.795]$ \\
         \end{tabular}
     \end{center}
 \end{table}
